@@ -1,0 +1,10 @@
+# runtime data and local configuration
+data/
+
+# .NET build output
+bin/
+obj/
+dist/
+artifacts/
+*.user
+.vs/

@@ -1,0 +1,1369 @@
+{
+  "format": "berichtsheft-snippets",
+  "version": 3,
+  "departments": [
+    {
+      "name": "First-Level-Support",
+      "description": "RSDE (Regional Support Desk Europe): Anwenderbetreuung über die Hotline",
+      "active": true,
+      "snippets": [
+        {
+          "text": "Workflow für Benutzer beantragen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Reinstallations-Tickets für Clients bearbeiten",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Outlook-Verteilerliste bearbeiten",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Korruptes S/MIME-Zertifikat erneuern",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Workflows weiterleiten",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Drucker-Adressliste bearbeiten",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Passwort zurücksetzen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwender bei Outlook-Problemen unterstützen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwender bei Word-Problemen unterstützen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwender bei SharePoint-Problemen unterstützen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Logfile für SCCM-Problematik erstellen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ticket telefonisch aufnehmen und Priorität festlegen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Benutzerkonto im AD auf Sperrung prüfen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzlaufwerk oder Druckerverbindung für Anwender einrichten",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zugriffsberechtigung auf Postfach oder Ordner beantragen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ticket an den Second-Level-Support mit Fehlerbeschreibung übergeben",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ],
+      "kind": "topic",
+      "code": ""
+    },
+    {
+      "name": "Second-Level-Support",
+      "description": "Service: Hardware, Garantie, Auslieferung und Vor-Ort-Support",
+      "active": true,
+      "snippets": [
+        {
+          "text": "Treiberupdate der Grafikkarte durchführen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Treiberupdate der Dockingstation durchführen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Garantiefall bei Lenovo eröffnen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Garantiefall bei HP eröffnen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kleinteile ausliefern",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datensicherung für lokale Festplatte erstellen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Arbeitsplatz ordentlich verkabeln",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ticket im SAP abschließen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Dockingstation-Probleme beheben",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "RAM-Upgrade einbauen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SSD austauschen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Batterie austauschen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Handyleasing-Geräte an Endkunden ausliefern und Ersteinrichtung durchführen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Hardwarediagnose mit Herstellertool durchführen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "BIOS-Update durchführen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Defektes Netzteil oder Ladegerät austauschen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bildschirm oder Peripheriegeräte austauschen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Altgeräte für die Verschrottung vorbereiten und Datenträger löschen",
+          "category": "Support",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Endpoint Management",
+      "description": "Verwaltung und Absicherung von Arbeitsplatzrechnern",
+      "active": true,
+      "snippets": [
+        {
+          "text": "OS-Collection einem Client zuweisen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Neuinstallation eines Clients im SCCM starten",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Neues SCCM-Objekt und AD-Computerobjekt anlegen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Client-Status und Kommunikation in SCCM prüfen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Task-Sequence-Verlauf analysieren und Fehler beheben",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Softwareverteilung in SCCM einer Collection zuweisen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Fehlgeschlagene Installation in Intune troubleshooten",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Hardware-Hash in Autopilot hochladen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Autopilot-Profil zuweisen und Geräteregistrierung prüfen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "App oder Konfigurationsprofil in Intune zuweisen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Compliance-Status eines Geräts in Intune prüfen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Veraltete Geräteobjekte in SCCM, AD und Intune bereinigen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Softwarepaket in SCCM erstellen und testen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Windows-Updates über die Softwareupdate-Gruppe freigeben",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Compliance-Richtlinie in Intune anpassen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Gerätegruppe in Entra ID oder Intune pflegen",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Client-Agent in SCCM neu installieren oder reparieren",
+          "category": "Endpoint",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ],
+      "kind": "topic",
+      "code": ""
+    },
+    {
+      "name": "Mobile Device Management",
+      "description": "Mobilgeräte: Leasing, Lager, Versand und Ersteinrichtung",
+      "active": true,
+      "snippets": [
+        {
+          "text": "E-Mails prüfen und sortieren",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Handyfolien bekleben",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Excel-Liste für OVP pflegen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Althandy-Rücksendungen bearbeiten",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Leasingstatus beim Partner überprüfen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "eSIM bereitstellen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kontrolle der Technikergeräte im Lager",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Folien über die GreenMonkey-Zuschneidemaschine zuschneiden",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Geräte aus dem Lager abholen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Verpackungsmüll entsorgen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "E-Mails an Kunden zur Abfrage der Sendemethode verfassen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Gerät im MDM-System registrieren",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Gerät zurücksetzen und für Neuausgabe vorbereiten",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SIM-Karte oder eSIM einem Gerät zuordnen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Versandetiketten erstellen und Pakete für den Versand vorbereiten",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bestandsliste der Lagergeräte abgleichen",
+          "category": "MDM",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ],
+      "kind": "topic",
+      "code": ""
+    },
+    {
+      "name": "DevOps",
+      "description": "Automatisierung von Entwicklung und Betrieb",
+      "active": true,
+      "snippets": [
+        {
+          "text": "Azure-DevOps-Repository anlegen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pull Request stellen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Terraform-Modul überarbeiten",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pull Request eines Teammitglieds reviewen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Branch-Policies im Azure-DevOps-Repository einrichten",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Terraform-Plan prüfen und Änderungen ausrollen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pipeline-Lauf analysieren und fehlgeschlagene Stages beheben",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Variablen und Service Connections in einer Pipeline anpassen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Terraform-State und Modulversionen pflegen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Terraform-Änderung in einer Testumgebung validieren",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Merge-Konflikt in einem Pull Request lösen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Geheimnisse und Zugangsdaten sicher im Key Vault ablegen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wiederverwendbare Pipeline-Vorlage erstellen",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "README und Moduldokumentation im Repository aktualisieren",
+          "category": "DevOps",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ],
+      "kind": "topic",
+      "code": ""
+    },
+    {
+      "name": "Netzwerkverwaltung",
+      "description": "LAN, WLAN und Netzwerkdienste",
+      "active": true,
+      "snippets": [
+        {
+          "text": "Access Point einbinden",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Korrektes VLAN an einem Switch hinterlegen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "LACP-Probleme troubleshooten",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Switchport konfigurieren (Access-/Trunk-Port, Beschreibung)",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Spanning-Tree-Topologie prüfen und Fehler analysieren",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Port-Security- und 802.1X-Einstellungen prüfen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Firewall-Regel anfragen bzw. anpassen und Verkehrsfluss testen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Routing und Erreichbarkeit mit Ping, Traceroute und Paketmitschnitt analysieren",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IP-Adressen und Subnetze in der IPAM-Lösung pflegen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "WLAN-Ausleuchtung und SSID-Konfiguration prüfen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Uplinks, Portkanäle und Link-Auslastung überwachen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Switch-Firmware-Update planen und dokumentieren",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerkdokumentation und Patchpläne aktualisieren",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Port-Mirroring für einen Paketmitschnitt einrichten",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Switchstack oder Portkanal um einen Uplink erweitern",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "DHCP-Reservierung oder Scope anpassen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerkanschluss an der Dose durchmessen und Patchkabel prüfen",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Syslog- und SNMP-Meldungen von Netzwerkgeräten auswerten",
+          "category": "Netzwerk",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ],
+      "kind": "topic",
+      "code": ""
+    },
+    {
+      "name": "Neuinstallationen",
+      "description": "Installation und Einrichtung neuer Systeme",
+      "active": true,
+      "snippets": [
+        {
+          "text": "Neuinstallation von Arbeitsplatzrechnern per Image oder Betriebssystemverteilung",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Vorbereitung und Einrichtung neuer Arbeitsplätze mit Hardware und Zubehör",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Installation und Konfiguration der Standardsoftware",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aufnahme neuer Geräte in die Domäne und Zuweisung von Benutzerrechten",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datensicherung und Datenübernahme bei Gerätetausch",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pflege und Aktualisierung der Installations-Images",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Dokumentation der Installation und Übergabe an den Anwender",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Clientdaten vor der Neuinstallation sichern",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Neuinstallation per PXE-Boot starten",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Treiberpaket für ein neues Gerätemodell einbinden",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Nach der Installation Domänenbeitritt und Softwareverteilung prüfen",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Neu installierten Client an den Anwender übergeben und Einrichtung bestätigen",
+          "category": "Installation",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ],
+      "kind": "topic",
+      "code": ""
+    },
+    {
+      "name": "IT-Systemadministration",
+      "description": "Betrieb der Server- und Systemlandschaft",
+      "active": true,
+      "snippets": [
+        {
+          "text": "Benutzer im Active Directory anlegen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Berechtigungen im Active Directory vergeben",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Gruppenrichtlinie (GPO) anpassen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Benutzerkonto entsperren und Passwort zurücksetzen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Gruppenmitgliedschaften und Verteilerlisten pflegen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ausscheidende Mitarbeiter deaktivieren und Konto aufräumen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "GPO-Anwendung mit gpresult und Ereignisanzeige prüfen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Exchange-Postfach anlegen und Postfachberechtigungen vergeben",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Shared Mailbox und Weiterleitung einrichten",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Nachrichtenverfolgung in Exchange zur Fehlersuche nutzen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Benutzer und Lizenzen in Entra ID verwalten",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Conditional-Access-Richtlinien und Anmeldeprotokolle prüfen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Entra-Connect-Synchronisation prüfen und Synchronisationsfehler beheben",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "MFA-Registrierung zurücksetzen und Anwender unterstützen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Enterprise Application und Berechtigungen in Entra ID einrichten",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Verzeichnisdienst-Replikation prüfen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kennwortrichtlinie im AD anpassen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Verteilergruppe in Exchange anlegen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Verwaiste Konten und Gruppen im AD bereinigen",
+          "category": "Administration",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ],
+      "kind": "topic",
+      "code": ""
+    },
+    {
+      "name": "Zusatzaufgaben",
+      "description": "Abteilungsunabhängige Aufgaben neben dem Tagesgeschäft",
+      "active": true,
+      "snippets": [
+        {
+          "text": "Pflege der Zeitdaten im ERP-System",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Installation von Software am eigenen Client",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aktualisierung von Dokumentationen",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pflege des Ausbildungsnachweises",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Teilnahme an Teambesprechungen und Abteilungsmeetings",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aufräumen und Inventarisieren des Lagers",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Urlaubs- und Zeitkonto im Personalsystem prüfen",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wissensdatenbank-Artikel erstellen",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Berufsschulunterlagen für die Ausbildungsleitung vorbereiten",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schulungsvideo oder E-Learning bearbeiten",
+          "category": "Zusatzaufgaben",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "BFKO",
+      "description": "Beispiel – bitte an deinen Lehrplan anpassen",
+      "active": true,
+      "kind": "school",
+      "code": "BFKO",
+      "snippets": [
+        {
+          "text": "Hardwarekomponenten eines Arbeitsplatzrechners vergleichen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Angebotsvergleich und Nutzwertanalyse",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "OSI- und TCP/IP-Modell",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IPv4-Adressierung und Subnetting",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Einführung in IPv6",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schutzziele der Informationssicherheit",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schutzbedarfsfeststellung nach IT-Grundschutz",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Grundlagen der Programmierung mit Kontrollstrukturen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Entity-Relationship-Modell erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SQL-Abfragen mit SELECT und JOIN",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ticketsysteme und Service-Level-Agreements",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kundengespräche und Kommunikationsmodelle",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "WIKO",
+      "description": "Beispiel – bitte an deinen Lehrplan anpassen",
+      "active": true,
+      "kind": "school",
+      "code": "WIKO",
+      "snippets": [
+        {
+          "text": "Sozialversicherungssysteme in Deutschland",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Arbeitsschutz und Jugendarbeitsschutzgesetz",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Tarifverträge und Mitbestimmung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lohnabrechnung verstehen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Rechte und Pflichten aus dem Ausbildungsvertrag",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "GK",
+      "description": "Beispiel – bitte an deinen Lehrplan anpassen",
+      "active": true,
+      "kind": "school",
+      "code": "GK",
+      "snippets": [
+        {
+          "text": "Aufbau und Aufgaben des politischen Systems in Deutschland",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Grundrechte und Rechtsstaat",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Europäische Union und ihre Institutionen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wahlen und politische Willensbildung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "DE",
+      "description": "Beispiel – bitte an deinen Lehrplan anpassen",
+      "active": true,
+      "kind": "school",
+      "code": "DE",
+      "snippets": [
+        {
+          "text": "Protokolle und Berichte verfassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Präsentationstechniken",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Geschäftsbriefe nach DIN 5008",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "EN",
+      "description": "Beispiel – bitte an deinen Lehrplan anpassen",
+      "active": true,
+      "kind": "school",
+      "code": "EN",
+      "snippets": [
+        {
+          "text": "Technical vocabulary: hardware and networks",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Writing e-mails in English",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Reading technical documentation",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "BWL",
+      "description": "Beispiel – bitte an deinen Lehrplan anpassen",
+      "active": true,
+      "kind": "school",
+      "code": "BWL",
+      "snippets": [
+        {
+          "text": "Aufbau- und Ablauforganisation von Unternehmen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Rechtsformen von Unternehmen im Vergleich",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Leitbild und Ziele eines Unternehmens analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Angebotsvergleich und Nutzwertanalyse",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kaufvertrag und Vertragsstörungen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "name": "Global Operations",
+      "description": "Beispiel",
+      "topics": [
+        "DevOps",
+        "Netzwerkverwaltung",
+        "IT-Systemadministration"
+      ]
+    },
+    {
+      "name": "Service",
+      "description": "Beispiel",
+      "topics": [
+        "Second-Level-Support",
+        "Endpoint Management",
+        "Mobile Device Management",
+        "Neuinstallationen"
+      ]
+    },
+    {
+      "name": "RSDE",
+      "description": "Regional Support Desk Europe (Hotline)",
+      "topics": [
+        "First-Level-Support"
+      ]
+    }
+  ]
+}

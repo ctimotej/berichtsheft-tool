@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Berichtsheft</AssemblyName>
+    <RootNamespace>Berichtsheft.Desktop</RootNamespace>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <Product>Berichtsheft Generator</Product>
+    <Authors>Tim Kraemer</Authors>
+    <Company>Tim Kraemer</Company>
+    <Copyright>© 2026 Tim Kraemer</Copyright>
+    <Version>2.0.0</Version>
+    <InformationalVersion>2.0.0</InformationalVersion>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <ApplicationDefaultFont>Segoe UI, 9pt</ApplicationDefaultFont>
+    <InvariantGlobalization>true</InvariantGlobalization>
+
+    <!-- lets the Windows-only project be compiled/published from Linux (CI) -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- Windows only: no other platform's native SkiaSharp/SQLite binaries are needed -->
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-x64</RuntimeIdentifier>
+    <SelfContained Condition="'$(SelfContained)' == ''">false</SelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Berichtsheft.Core\Berichtsheft.Core.csproj" />
+  </ItemGroup>
+
+</Project>
