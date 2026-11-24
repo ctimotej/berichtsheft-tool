@@ -1,0 +1,1509 @@
+{
+  "format": "berichtsheft-snippets",
+  "version": 3,
+  "departments": [
+    {
+      "name": "LF1",
+      "description": "Das Unternehmen und die eigene Rolle im Betrieb beschreiben (1. Ausbildungsjahr, 40 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF1",
+      "snippets": [
+        {
+          "text": "Unternehmensleitbild des Ausbildungsbetriebs analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ökonomische, ökologische und soziale Unternehmensziele",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zielkonflikte und Zielharmonie im Unternehmen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Marktformen und Marktstruktur der IT-Branche",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Markt- und Kundenbeziehungen des Unternehmens",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wertschöpfungskette und Kernprozesse des Betriebs",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Leistungsschwerpunkte und Produkte des Ausbildungsbetriebs",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aufbauorganisation: Stellen, Abteilungen und Organigramm",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Organisationsformen: Einlinien-, Mehrlinien- und Matrixorganisation",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Rechtsformen von Unternehmen im Vergleich",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Vollmachten: Prokura und Handlungsvollmacht",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Duales Ausbildungssystem und Rolle der Lernorte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Fort- und Weiterbildungsmöglichkeiten in der IT",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Multimediale Unternehmenspräsentation im Team planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Unternehmenspräsentation halten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Feedbackregeln und kriteriengeleitete Bewertung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF2",
+      "description": "Arbeitsplätze nach Kundenwunsch ausstatten (1. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF2",
+      "snippets": [
+        {
+          "text": "Kundenwunsch für einen Arbeitsplatz aufnehmen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anforderungen an Hard- und Software dokumentieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Auswahlkriterien für die Beschaffung ableiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aufbau und Komponenten eines PCs (Mainboard, CPU, RAM)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Prozessoren: Kerne, Takt, Cache und TDP",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Arbeitsspeichertypen und Speicherbandbreite",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Massenspeicher: HDD, SATA-SSD und NVMe",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Grafikkarten und Monitorschnittstellen (HDMI, DisplayPort, USB-C)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bussysteme und Schnittstellen (PCIe, USB, Thunderbolt)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Peripheriegeräte und Docking-Lösungen auswählen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Monitore: Auflösung, Paneltypen und Bildschirmgröße",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Betriebssysteme und Softwarelizenzen für Arbeitsplätze",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "CE-Kennzeichnung, Prüfzeichen und Umweltsiegel",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Elektrische Sicherheit und Schutzmaßnahmen an IT-Geräten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenblätter vergleichen, auch auf Englisch",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Nutzwertanalyse zur Produktauswahl",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ergonomie und Arbeitsstättenverordnung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Leistungsaufnahme und Energiekosten eines Arbeitsplatzes berechnen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Energieeffizienzklassen und Energy Star",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Green IT: Recycling und Entsorgung nach ElektroG",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bezugsquellen ermitteln und Anfrage stellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Quantitativer Angebotsvergleich (Bezugskalkulation)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Qualitativer Angebotsvergleich",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Angebot mit Zuschlagssätzen kalkulieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kaufvertrag: Antrag, Annahme und Rechtsfolgen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lieferverzug und mangelhafte Lieferung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wareneingangskontrolle und Mängelrüge",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Arbeitsplatz unter Beachtung der Arbeitssicherheit in Betrieb nehmen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Übergabeprotokoll erstellen und Kundenzufriedenheit bewerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF3",
+      "description": "Clients in Netzwerke einbinden (1. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF3",
+      "snippets": [
+        {
+          "text": "Anforderungen an die Integration von Clients erfassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Leistungskriterien für Netzwerkclients ableiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerktopologien: Stern, Bus, Ring und Masche",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "LAN, WAN, MAN und PAN unterscheiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "OSI-Referenzmodell und seine Schichten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "TCP/IP-Modell und Zuordnung der Protokolle",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerkkomponenten: Switch, Router und Access Point",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "MAC-Adressen und Switching-Grundlagen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ethernet-Standards und Übertragungsraten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kupferkabel-Kategorien und Lichtwellenleiter",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Strukturierte Verkabelung (Primär-, Sekundär-, Tertiärbereich)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aufbau einer IPv4-Adresse",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Subnetzmaske und CIDR-Schreibweise",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Subnetting: Netz- und Hostanteil berechnen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Private und öffentliche IP-Adressen, NAT",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aufbau und Schreibweise von IPv6-Adressen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IPv6-Adresstypen und Autokonfiguration",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Physische und logische Netzwerkpläne lesen und erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Client manuell und per DHCP konfigurieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "DNS-Grundlagen und Namensauflösung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Client einer Domäne hinzufügen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerk- und Druckerfreigaben einrichten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Verbindungstests mit ping, ipconfig, tracert und nslookup",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ergebnisse von Funktionstests protokollieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Energieeffizienz von Netzwerkkomponenten (PoE, Energy Efficient Ethernet)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Herstellerdokumentation auf Englisch auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF4",
+      "description": "Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen (1. Ausbildungsjahr, 40 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF4",
+      "snippets": [
+        {
+          "text": "Schutzziele: Vertraulichkeit, Integrität und Verfügbarkeit",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Erweiterte Schutzziele: Authentizität und Verbindlichkeit",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenschutz, Datensicherheit und Informationssicherheit abgrenzen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "DSGVO: Grundsätze und Betroffenenrechte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "BDSG und betrieblicher Datenschutzbeauftragter",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IT-Sicherheitsleitlinie und Sicherheitskonzept",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "BSI-IT-Grundschutz und IT-Grundschutz-Kompendium",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Strukturanalyse des eigenen Arbeitsbereichs",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schutzbedarfskategorien: normal, hoch und sehr hoch",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schadensszenarien klassifizieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Gefährdungen: Malware, Phishing und Social Engineering",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bedrohungen gewichten und dokumentieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Maximum-, Kumulations- und Verteilungsprinzip",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Technische und organisatorische Maßnahmen (TOM)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Passwortsicherheit und Bildschirmsperre im Arbeitsalltag",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Rolle der Mitarbeitenden im IT-Sicherheitsprozess",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF5",
+      "description": "Software zur Verwaltung von Daten anpassen (1. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF5",
+      "snippets": [
+        {
+          "text": "Informationen, Daten und Datenobjekte unterscheiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenherkunft, Datenart und Verfügbarkeit analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zahlensysteme: binär, dezimal und hexadezimal",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zeichenkodierung: ASCII und UTF-8",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datentypen in Programmiersprachen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenformate CSV, JSON und XML",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Speicherbedarf berechnen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Speicherlösungen: lokal, NAS und Cloud",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenbankmodelle im Überblick",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Entity-Relationship-Modell erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kardinalitäten und Beziehungstypen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "ER-Modell in ein relationales Modell überführen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Normalisierung bis zur dritten Normalform",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Primär- und Fremdschlüssel",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SQL: Tabellen mit CREATE TABLE anlegen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SQL: Daten mit INSERT, UPDATE und DELETE bearbeiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SQL-Abfragen mit SELECT, WHERE und ORDER BY",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SQL: JOIN über mehrere Tabellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "SQL: Aggregatfunktionen und GROUP BY",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Programmiergrundlagen: Variablen und Operatoren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kontrollstrukturen: Verzweigungen und Schleifen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktionen und Parameter",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Struktogramm und Programmablaufplan",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwendung zur Datenverwaltung anpassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Testfälle entwickeln (Black-Box- und White-Box-Test)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Softwaredokumentation erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Vorgehensmodelle: Wasserfall- und V-Modell",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Softwareentwicklungsprozess evaluieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF6",
+      "description": "Serviceanfragen bearbeiten (2. Ausbildungsjahr, 40 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF6",
+      "snippets": [
+        {
+          "text": "Serviceanfragen über verschiedene Kanäle annehmen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Incident, Service Request und Problem unterscheiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "ITIL-Grundlagen und Service-Management-Prozesse",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Service-Level-Agreements und Reaktionszeiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Priorisierung nach Dringlichkeit und Auswirkung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ticketsysteme und Statusdokumentation",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Support-Level und Eskalationsstufen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Systematische Fehleranalyse und Fragetechniken",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kommunikationsmodelle: Sender-Empfänger- und Vier-Seiten-Modell",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aktives Zuhören und Gesprächsführung am Telefon",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Deeskalationsstrategien bei Beschwerden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Servicegespräch auf Englisch führen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wissensdatenbank und Lösungsdokumentation",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kundenzufriedenheit messen und Servicequalität verbessern",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF7",
+      "description": "Cyber-physische Systeme ergänzen (2. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF7",
+      "snippets": [
+        {
+          "text": "Begriff und Merkmale cyber-physischer Systeme",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Industrie 4.0 und Internet of Things",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kundenauftrag zur Erweiterung eines cyber-physischen Systems analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Energie-, Stoff- und Informationsfluss darstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Analoge und digitale Signale",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Sensoren: Temperatur, Licht, Bewegung und Abstand",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aktoren: Motoren, Relais und LEDs",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Analog-Digital-Wandlung und Auflösung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Mikrocontroller und Einplatinencomputer (Arduino, Raspberry Pi)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "GPIO-Pins ansteuern",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Mikrocontroller programmieren und Bibliotheken einbinden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Busprotokolle I²C, SPI und UART",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IoT-Kommunikation mit MQTT",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Grundgrößen der Elektrotechnik: Spannung, Strom und Widerstand",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ohmsches Gesetz und elektrische Leistung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Reihen- und Parallelschaltung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Energieversorgung: Netzteil, Akku und PoE",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Spannung und Strom mit dem Multimeter messen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Energiebedarf validieren und protokollieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schaltpläne und technische Unterlagen lesen und anpassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Komponenten funktional in ein cyber-physisches System integrieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktionsprüfung des erweiterten Systems",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Betriebssicherheit cyber-physischer Systeme",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datensicherheit von IoT-Geräten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF8",
+      "description": "Daten systemübergreifend bereitstellen (2. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF8",
+      "snippets": [
+        {
+          "text": "Datenquellen für einen Kundenauftrag ermitteln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Strukturierte, semistrukturierte und unstrukturierte Daten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Rechtliche Rahmenbedingungen der Datennutzung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zugriffsmechanismen: Datei, Datenbank und API",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Heterogene Datenquellen auswählen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Konzept zur Datenbereitstellung erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Client-Server-Architektur und Schichtenmodell",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "REST-Prinzipien und HTTP-Methoden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "API-Anfragen testen (z. B. mit Postman oder curl)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "JSON-Daten parsen und erzeugen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "XML-Daten verarbeiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenbankzugriff aus einem Programm",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "ETL-Prozess: Extrahieren, Transformieren und Laden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenqualität prüfen und Daten bereinigen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Authentifizierung an Schnittstellen (API-Keys, OAuth)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Verschlüsselte Übertragung mit HTTPS und TLS",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Versionsverwaltung mit Git: commit, branch und merge",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zusammenarbeit über Remote-Repositories",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Entwicklungsumgebung und Werkzeuge auswählen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Arbeitsteilige Entwicklung mit Aufgabenboards",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ortsunabhängige Zusammenarbeit mit Kollaborationstools",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Containerisierung mit Docker im Überblick",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bedienungsanleitung für das Endprodukt erstellen, auch auf Englisch",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Endprodukt an den Kunden übergeben",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Eignung der Entwicklungswerkzeuge reflektieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF9",
+      "description": "Netzwerke und Dienste bereitstellen (2. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF9",
+      "snippets": [
+        {
+          "text": "Netzwerkanforderungen im Kundengespräch ermitteln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerkkomponenten nach Leistungsmerkmalen auswählen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Englischsprachige Herstellerdokumentationen für Netzwerkgeräte nutzen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "VLANs planen und konfigurieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Trunking und IEEE 802.1Q",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Spanning Tree Protocol",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Link Aggregation (LACP)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Statisches Routing konfigurieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Dynamisches Routing (OSPF) im Überblick",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Inter-VLAN-Routing",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "DHCP-Server einrichten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "DNS-Server und Zonen einrichten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IPv6 im Netzwerk einsetzen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "WLAN-Standards (IEEE 802.11) und Frequenzbänder",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "WLAN-Sicherheit mit WPA3 und 802.1X",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ausleuchtung und Kanalplanung im WLAN",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "VPN-Technologien (IPsec, SSL-VPN)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Cloud-Dienste und hybride Netzwerke",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerkkonzepte technisch und wirtschaftlich vergleichen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Nachhaltigkeit von Netzwerkinfrastruktur",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerkgeräte über die Kommandozeile konfigurieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktionsprüfungen und Messungen im Netzwerk",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerkdokumentation erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzwerk nach Datensicherheit und Datenschutz beurteilen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zukunftsfähigkeit der Netzwerklösung reflektieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    }
+  ],
+  "units": []
+}

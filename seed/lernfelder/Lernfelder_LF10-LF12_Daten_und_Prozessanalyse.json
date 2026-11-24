@@ -1,0 +1,650 @@
+{
+  "format": "berichtsheft-snippets",
+  "version": 3,
+  "departments": [
+    {
+      "name": "LF10c",
+      "description": "Werkzeuge des maschinellen Lernens einsetzen (3. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF10c",
+      "snippets": [
+        {
+          "text": "Begriffe: künstliche Intelligenz, maschinelles Lernen und Deep Learning",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Einsatzmöglichkeiten des maschinellen Lernens in Unternehmen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Betriebswirtschaftliche Eignung von maschinellem Lernen prüfen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Überwachtes Lernen: Klassifikation und Regression",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Unüberwachtes Lernen: Clustering",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bestärkendes Lernen im Überblick",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Freie und kommerzielle Datenquellen (Open Data)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datensätze zusammenführen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Explorative Datenanalyse",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenbereinigung und Umgang mit fehlenden Werten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Feature Engineering und Normalisierung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Trainings-, Validierungs- und Testdaten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Python für Data Science (pandas, NumPy)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "ML-Bibliotheken (scikit-learn)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Entscheidungsbäume und lineare Regression",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Neuronale Netze im Überblick",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schnittstellen zum Datenimport implementieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Modell trainieren und Hyperparameter anpassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lernfortschritt überwachen (Loss, Accuracy)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Overfitting und Underfitting",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Modellgüte bewerten: Konfusionsmatrix, Precision und Recall",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Daten visualisieren (Matplotlib)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bias und Fairness in Trainingsdaten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "EU AI Act und datenschutzrechtliche Aspekte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wirksamkeit des Entscheidungssystems reflektieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF11c",
+      "description": "Prozesse analysieren und gestalten (3. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF11c",
+      "snippets": [
+        {
+          "text": "Geschäftsprozesse und Prozessarten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kundenspezifische Prozessdarstellungen analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "BPMN 2.0 im Detail",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wertstromanalyse",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Informationsfluss für die Digitalisierung ableiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Prozesskennzahlen (KPIs) definieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Prozessdaten mit vorgegebenen Auswertungsverfahren analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Process Mining",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenbankabfragen zur Prozessanalyse",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Tabellenkalkulation und Pivot-Auswertungen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Business Intelligence und Dashboards",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Digitale Geschäftsmodelle (Plattform, Abo, Freemium)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Business Model Canvas",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Technische Lösungen zur Prozessdigitalisierung vergleichen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Workflow-Automatisierung und Low-Code",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Robotic Process Automation (RPA)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "ERP-Systeme und Prozessintegration",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wirtschaftlichkeitsrechnung für Digitalisierungsprojekte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Digitalisierten Prozess implementieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Prozessdokumentation für Kunden, auch auf Englisch",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Change Management bei der Prozesstransformation",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kunden bei der Einführung begleiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ergebnis gemeinsam bewerten und Prozessdarstellung anpassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ökonomische Aspekte der Prozessgestaltung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ökologische Aspekte und Nachhaltigkeit von Prozessen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF12c",
+      "description": "Kundenspezifische Prozess- und Datenanalyse durchführen (3. Ausbildungsjahr, 120 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF12c",
+      "snippets": [
+        {
+          "text": "Kundenauftrag und Ausgangssituation analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anforderungsanalyse in Zusammenarbeit mit dem Kunden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lastenheft auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektziele nach SMART formulieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktionale und nicht-funktionale Anforderungen unterscheiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schulungsbedarfe und Rahmenbedingungen ermitteln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektmanagement: Phasen und Methoden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektstrukturplan erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zeitplanung mit Gantt-Diagramm",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzplantechnik und kritischer Pfad",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Personelle und technische Ressourcen planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektkosten kalkulieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Risikomanagement im Projekt",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lösungsvarianten entwickeln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lösungsvarianten mit Nutzwertanalyse vergleichen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenschutz und Datensicherheit bei der Lösungsauswahl",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pflichtenheft erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Angebot für den Kundenauftrag erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenbestände des Kunden sichten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Analysefragen mit dem Kunden festlegen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenpipeline für das Projekt aufbauen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenschutzkonzept und Anonymisierung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Statistische Auswertung der Projektdaten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ist- und Soll-Prozessmodell gegenüberstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Analyseergebnisse visualisieren und Dashboard erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Handlungsempfehlungen ableiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ergebnisbericht für den Kunden erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Automatisierte Auswertungen einrichten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenqualität im Projekt sichern",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Qualitätssicherungsmaßnahmen planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Abnahmetest mit dem Kunden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektergebnis präsentieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwenderschulung durchführen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Produkt und Dokumentation übergeben, Abnahmeprotokoll",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wirtschaftlichkeit der Lösung bewerten (Amortisation)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Skalierbarkeit und Verlässlichkeit der Lösung bewerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektabschluss und Lessons Learned",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kritisch-konstruktives Kundenfeedback auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    }
+  ],
+  "units": []
+}

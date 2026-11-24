@@ -65,6 +65,12 @@ know the database – they are pure and unit-testable.
 
 - **Setting** – key/value (JSON) for app settings and the default signature
 
+- **Unit** also has `is_school` (the Abteilung „Berufsschule“).
+
+Databases that this version cannot upgrade (unknown migrations, not a database of this program) are never changed:
+`Data/DatabaseGuard.cs` moves them aside as `berichtsheft.alt-<timestamp>.db` and the program starts with a fresh database
+(old Word reports can be read back with *Eigene Berichte importieren*).
+
 Entries are stored as JSON inside the report: they are always edited and saved as a whole week, and
 entries are copies (editing a snippet later must not change old reports). `snippet_id` is kept for
 “avoid recently used” logic. Schema changes are EF Core migrations (`Data/Migrations`). The database is created by `Database.Migrate()` at start.
@@ -90,7 +96,20 @@ Statuses: `draft` → `exported` → `signed`.
 Days with the same subject set share one pool, so topics are not repeated within a week.
 `ReportService.SchoolDayEntries` produces new topics for one day (editor: switching a day to *Berufsschule*).
 
-**Line wrapping** (`Services/LineWrap.cs`, same greedy algorithm in `ui.js: wrapText`): when rendering,
+**Lernfelder per Ausbildungsjahr** (`Services/Curriculum.cs`): a school subject whose Kürzel is `LF<n>` or `LF<n><a–d>`
+is a Lernfeld; LF1–5 belong to the 1st, LF6–9 to the 2nd and LF10–12 to the 3rd year, the letter is the Fachrichtung
+(a Anwendungsentwicklung, b Systemintegration, c Daten- und Prozessanalyse, d Digitale Vernetzung), taken from the profession in
+the settings. The subjects of a school day are chosen in this order: the day's own subjects (editor) > the subjects of the
+request (*Neuer Bericht*) > the Lernfelder of the school block in the plan > the Lernfelder of the Ausbildungsjahr > all active
+subjects (with a hint, e.g. without training start). With *Lernfelder nach Datum wählen* (default, `school_subjects_by_date`)
+`Curriculum.ForDate` narrows the year's Lernfelder to those taught at the date: in number order, each for a share of the
+Ausbildungsjahr proportional to its hours from the description („80 Std.“, default 80), plus the neighbour within one month of
+a change. The Lernfelder are seeded from `seed/lernfelder/*.json` once per database.
+
+**Abteilung „Berufsschule“** (`Unit.is_school`): in a report or in a rotation period of the plan it makes every day without
+an explicit type a school day; a week that consists only of school days gets „Berufsschule“ as its Abteilung.
+
+**Line wrapping** (`Services/LineWrap.cs`): when rendering,
 every entry is split at word boundaries into form lines of `line_chars`; hours go next to the first line.
 If a day needs more lines than the template has, the rest is joined into the last line and a warning
 is returned. Character counts are an approximation – the width is adjustable per template.
@@ -173,6 +192,7 @@ Unexpected exceptions become a generic message while the stack trace is written 
 | 1.1 ✅ | Azubi/Ausbilder modes, exchange folder, bulk generation, planning, Berufsschule/Lernfelder | – |
 | 1.2 ✅ | Abteilungen + Themen, subjects per school day, line wrapping, missing weeks, exam export, several trainers, Lehrjahr grouping | – |
 | 2.0 ✅ | Windows Forms desktop app replaces the web UI; exchange folder removed | |
+| 2.1 ✅ | Lernfelder LF1–LF12 of all Fachrichtungen, choice per Ausbildungsjahr, Abteilung „Berufsschule“ | `Services/Curriculum.cs` |
 | later | user accounts, central hosting, multi-user | models (`owner_id`), login, EF Core migrations, PostgreSQL/SQL Server |
 | 3 | SharePoint document storage, Microsoft login | `Storage/`, MSAL |
 | 4 | AI wording/variation, smarter distribution based on history | `Generation/` provider, recent-usage data already stored |

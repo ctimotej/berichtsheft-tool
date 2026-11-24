@@ -1,0 +1,650 @@
+{
+  "format": "berichtsheft-snippets",
+  "version": 3,
+  "departments": [
+    {
+      "name": "LF10d",
+      "description": "Cyber-physische Systeme entwickeln (3. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF10d",
+      "snippets": [
+        {
+          "text": "Kundenauftrag zur Entwicklung eines cyber-physischen Systems analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anforderungen an Echtzeit und Zuverlässigkeit",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Mensch-Maschine-Schnittstellen (HMI-Konzepte)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Künstliche Intelligenz in cyber-physischen Systemen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Umsetzungsvarianten auswählen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Systemarchitektur eines cyber-physischen Systems planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Sensorauswahl und Sensordatenverarbeitung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Aktoren ansteuern und regeln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Grundlagen der Steuerungs- und Regelungstechnik",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Speicherprogrammierbare Steuerungen (SPS) im Überblick",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Embedded-Programmierung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Feldbusse und industrielle Kommunikation (z. B. Profinet)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IoT-Protokolle MQTT und OPC UA",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktechnologien: Bluetooth LE, LoRaWAN und Zigbee",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Edge Computing und Cloud-Anbindung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schnittstellen zur Datenübertragung programmieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Visualisierung mit Dashboards (z. B. Node-RED, Grafana)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "KI-Modell in ein cyber-physisches System einbinden (z. B. Bilderkennung)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Testkonzept für das Gesamtsystem entwickeln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Hardware-in-the-Loop und Systemtests",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Technische Dokumentation zur Bedienung und Wartung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Multimediale Anleitungen erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "System nach Wirtschaftlichkeit, Skalierbarkeit und Verlässlichkeit bewerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ethisch-moralische Aspekte von künstlicher Intelligenz",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Arbeitssicherheit und Maschinenrichtlinie",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF11d",
+      "description": "Betrieb und Sicherheit vernetzter Systeme gewährleisten (3. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF11d",
+      "snippets": [
+        {
+          "text": "Informationssicherheit in vernetzten und cyber-physischen Systemen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kundengespräch zur Schutzbedarfsermittlung vorbereiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schutzziele mit dem Kunden festlegen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Risikoanalyse: Eintrittswahrscheinlichkeit und Schadenshöhe",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Risikomatrix erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IT- und OT-Sicherheit unterscheiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "IEC 62443 im Überblick",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Rechtliche Regelungen (DSGVO, NIS2, Cyber Resilience Act)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Angriffsvektoren auf IoT-Geräte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Firewalls und Netzsegmentierung für Produktionsnetze",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Sichere Kommunikation mit TLS und VPN",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Verschlüsselung und Zertifikate",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Geräteidentität und sichere Authentifizierung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Secure Boot und Firmware-Signierung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Sichere Firmware-Updates (Over-the-Air)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Standardpasswörter und unsichere Dienste vermeiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anomalieerkennung und Monitoring",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schwachstellenmanagement für IoT-Geräte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Notfallmanagement für vernetzte Anlagen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Technische und organisatorische Maßnahmen umsetzen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Sicherheitsniveau prüfen und Wirtschaftlichkeit bewerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Sicherheitsdokumentation erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kunden über Ergebnisse der Risikoanalyse informieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Relative Sicherheit vernetzter Systeme",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenschutz bei Sensordaten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF12d",
+      "description": "Kundenspezifisches cyber-physisches System optimieren (3. Ausbildungsjahr, 120 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF12d",
+      "snippets": [
+        {
+          "text": "Kundenauftrag und Ausgangssituation analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anforderungsanalyse in Zusammenarbeit mit dem Kunden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lastenheft auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektziele nach SMART formulieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktionale und nicht-funktionale Anforderungen unterscheiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schulungsbedarfe und Rahmenbedingungen ermitteln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektmanagement: Phasen und Methoden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektstrukturplan erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zeitplanung mit Gantt-Diagramm",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzplantechnik und kritischer Pfad",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Personelle und technische Ressourcen planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektkosten kalkulieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Risikomanagement im Projekt",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lösungsvarianten entwickeln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lösungsvarianten mit Nutzwertanalyse vergleichen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenschutz und Datensicherheit bei der Lösungsauswahl",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pflichtenheft erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Angebot für den Kundenauftrag erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Bestehendes cyber-physisches System analysieren und Schwachstellen erkennen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Optimierungsziele festlegen (Energie, Leistung, Verfügbarkeit)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Messdaten erfassen und auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Energieeffizienz des Systems optimieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Hardwarekomponenten modernisieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Software und Firmware optimieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Vernetzung und Datenfluss verbessern",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Predictive Maintenance einsetzen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Optimiertes System testen und in Betrieb nehmen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Vorher-Nachher-Vergleich dokumentieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wartungskonzept erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Qualitätssicherungsmaßnahmen planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Abnahmetest mit dem Kunden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektergebnis präsentieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwenderschulung durchführen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Produkt und Dokumentation übergeben, Abnahmeprotokoll",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wirtschaftlichkeit der Lösung bewerten (Amortisation)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Skalierbarkeit und Verlässlichkeit der Lösung bewerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektabschluss und Lessons Learned",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kritisch-konstruktives Kundenfeedback auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    }
+  ],
+  "units": []
+}

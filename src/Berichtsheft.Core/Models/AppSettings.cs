@@ -9,6 +9,7 @@ public sealed class AppSettings
 
     public string TraineeName { get; set; } = "";
     public string Company { get; set; } = "";
+    /// <summary>Also selects the Fachrichtung, i.e. the Lernfelder 10–12 of the 3rd year (see Services/Curriculum.cs).</summary>
     public string Profession { get; set; } = "";
     public DateOnly? TrainingStartDate { get; set; }
     public double HoursPerDay { get; set; } = 8.0;
@@ -22,18 +23,21 @@ public sealed class AppSettings
     public string FederalState { get; set; } = "";
     public bool SchoolTopics { get; set; } = true;
     public int SchoolEntriesPerDay { get; set; } = 3;
+    /// <summary>School days: only the Lernfelder taught at that point of the Ausbildungsjahr (in order, by their hours);
+    /// off = all Lernfelder of the Ausbildungsjahr. See Services/Curriculum.cs.</summary>
+    public bool SchoolSubjectsByDate { get; set; } = true;
     public DateOnly? TrainingEndDate { get; set; }
     public int OverdueDays { get; set; } = 14;
     /// <summary>Tray icon + global hotkey Ctrl+Shift+B; closing the window then only hides it.</summary>
     public bool TrayEnabled { get; set; } = true;
     /// <summary>Start with Windows (hidden in the tray).</summary>
     public bool AutostartEnabled { get; set; }
-    /// <summary>Tray notification for missing reports (needs the tray).</summary>
     /// <summary>Offers the Ausbilder mode (menu "Ansicht"). The program always starts in the normal mode; the
     /// Ausbilder mode must be enabled here and is switched on per session.</summary>
     public bool TrainerModeEnabled { get; set; }
     /// <summary>Ausbilder mode: also save Word files as PDF.</summary>
     public bool TrainerAlsoPdf { get; set; }
+    /// <summary>Tray notification for missing reports (needs the tray).</summary>
     public bool ReminderEnabled { get; set; } = true;
     /// <summary>Day of the last reminder - at most one per day.</summary>
     public DateOnly? ReminderLastDate { get; set; }

@@ -1,9 +1,11 @@
 using Berichtsheft.Core.Dtos;
 using Berichtsheft.Core.Hosting;
+using Berichtsheft.Core.Services;
 
 namespace Berichtsheft.Desktop;
 
-/// <summary>Pick a week; Abteilung, Themen and day types are suggested from the plan. Creates the report.</summary>
+/// <summary>Pick a week; Abteilung, Themen, day types and the Lernfelder of the school days are suggested from the plan
+/// and the Ausbildungsjahr. Creates the report.</summary>
 internal sealed class NewReportForm : Form
 {
     private readonly AppHost _host;
@@ -16,8 +18,10 @@ internal sealed class NewReportForm : Form
     private readonly NumericUpDown _count = new() { Minimum = 1, Maximum = 100, Width = 60 };
     private readonly NumericUpDown _countMax = new() { Minimum = 1, Maximum = 100, Width = 60 };
     private readonly ComboBox _mode = new() { DropDownStyle = ComboBoxStyle.DropDownList, Width = 110 };
+    private readonly Label _schoolHint = new() { AutoSize = true, ForeColor = SystemColors.GrayText, MaximumSize = new Size(330, 0) };
+    private readonly LernfeldList _lernfelder;
     private List<UnitOut> _units = new();
-    private List<DepartmentOut> _topicList = new();
+    private List<DepartmentOut> _topicList = new(), _subjects = new();
     private WeekInfo? _info;
     private bool _loading;
     public int? CreatedId { get; private set; }
@@ -25,10 +29,23 @@ internal sealed class NewReportForm : Form
     public NewReportForm(AppHost host, DateOnly? day)
     {
         _host = host;
-        Ui.Dialog(this, "Neuer Bericht", 480, 560);
+        Ui.Dialog(this, "Neuer Bericht", 520, 760);
+
+        Curriculum.Specialization? spec = null;
+        Ui.Try(() =>
+        {
+            using var s = _host.Open();
+            _subjects = s.Catalog.ListDepartments(onlyActive: true, kind: "school");
+            spec = Curriculum.SpecializationOf(s.Settings.Get().Profession);
+        });
+        _lernfelder = new LernfeldList(_subjects, spec, 170);
 
         _mode.Items.AddRange(new object[] { "pro Woche", "pro Tag" });
-        foreach (var c in _types) c.Items.AddRange(Ui.DayTypeNames);
+        foreach (var c in _types)
+        {
+            c.Items.AddRange(Ui.DayTypeNames);
+            c.SelectedIndexChanged += (_, _) => UpdateSchoolState();
+        }
 
         var days = new FlowLayoutPanel { FlowDirection = FlowDirection.TopDown, AutoSize = true, WrapContents = false };
         for (var i = 0; i < 5; i++)
@@ -46,8 +63,8 @@ internal sealed class NewReportForm : Form
 
         _mode.SelectedIndexChanged += (_, _) => _countMax.Enabled = _mode.SelectedIndex == 1;
         _count.ValueChanged += (_, _) => { if (_countMax.Value < _count.Value) _countMax.Value = _count.Value; };
-        var form = Ui.Form(("Woche (beliebiger Tag):", _day), ("", _week), ("Abteilung:", _unit), ("Themen:", _topics), ("Tage:", days), ("Einträge (von – bis pro Tag):", countRow));
-        _topics.Dock = DockStyle.Fill;
+        var form = Ui.Form(("Woche (beliebiger Tag):", _day), ("", _week), ("Abteilung:", _unit), ("Themen:", _topics), ("Tage:", days),
+            ("Einträge (von – bis pro Tag):", countRow), ("Lernfelder (Schultage):", _lernfelder), ("", _schoolHint));
         _topics.Height = 120;
 
         Controls.Add(form);
@@ -81,6 +98,8 @@ internal sealed class NewReportForm : Form
         return missing?.StartDate ?? DateOnly.FromDateTime(DateTime.Today);
     }
 
+    private UnitOut? SelectedUnit => _units.ElementAtOrDefault(_unit.SelectedIndex - 1);
+
     private void RefreshWeek()
     {
         _loading = true;
@@ -89,6 +108,7 @@ internal sealed class NewReportForm : Form
             using var s = _host.Open();
             var info = _info = s.Reports.WeekInfo(DateOnly.FromDateTime(_day.Value));
             _week.Text = $"KW {info.CalendarWeek}/{info.Year}: {Ui.Date(info.StartDate)} – {Ui.Date(info.EndDate)}, Nr. {info.ReportNumber}"
+                + (info.TrainingYear.Length > 0 ? $", {info.TrainingYear}. Ausbildungsjahr" : "")
                 + (info.ExistingReportId != null ? "\n(für diese Woche gibt es bereits einen Bericht)" : "");
             for (var i = 0; i < 5; i++)
             {
@@ -98,17 +118,45 @@ internal sealed class NewReportForm : Form
             }
             var unitIdx = info.PlanUnitId is { } u ? _units.FindIndex(x => x.Id == u) + 1 : 0;
             _unit.SelectedIndex = Math.Max(0, unitIdx);
-            var topics = info.PlanDepartmentIds.Count > 0 ? info.PlanDepartmentIds : s.Units.DefaultTopics(_units.ElementAtOrDefault(_unit.SelectedIndex - 1)?.Id);
+            var topics = info.PlanDepartmentIds.Count > 0 ? info.PlanDepartmentIds : s.Units.DefaultTopics(SelectedUnit?.Id);
             CheckTopics(topics);
+            _lernfelder.Check(info.SchoolDepartmentIds);
         }
         finally { _loading = false; }
+        UpdateSchoolState();
     }
 
     private void UnitChanged()
     {
         using var s = _host.Open();
-        var id = _units.ElementAtOrDefault(_unit.SelectedIndex - 1)?.Id;
-        if (id != null) CheckTopics(s.Units.DefaultTopics(id));
+        var unit = SelectedUnit;
+        if (unit == null || _info == null) return;
+        if (unit.IsSchool)
+        {
+            // Abteilung "Berufsschule": every normal day becomes a school day, no Themen needed
+            for (var i = 0; i < 5; i++)
+                if (Ui.DayTypeKeys[Math.Max(0, _types[i].SelectedIndex)] == "work") _types[i].SelectedIndex = Array.IndexOf(Ui.DayTypeKeys, "school");
+            CheckTopics(Array.Empty<int>());
+        }
+        else
+        {
+            for (var i = 0; i < 5; i++)
+            {
+                var planned = _info.DayTypes.GetValueOrDefault(_info.StartDate.AddDays(i), "work");
+                if (Ui.DayTypeKeys[Math.Max(0, _types[i].SelectedIndex)] == "school" && planned == "work") _types[i].SelectedIndex = 0;
+            }
+            CheckTopics(s.Units.DefaultTopics(unit.Id));
+        }
+        UpdateSchoolState();
+    }
+
+    private void UpdateSchoolState()
+    {
+        var school = _types.Count(c => Ui.DayTypeKeys[Math.Max(0, c.SelectedIndex)] == "school");
+        _lernfelder.Enabled = school > 0;
+        _schoolHint.Text = school == 0 ? "Keine Schultage in dieser Woche."
+            : $"{school} Schultag(e): Themen aus den gewählten Lernfeldern. Vorausgewählt sind die Lernfelder, die zu diesem Zeitpunkt " +
+              "des Ausbildungsjahres dran sind (3. Jahr: die der Fachrichtung) bzw. die der Berufsschul-Planung.";
     }
 
     private void CheckTopics(IEnumerable<int> ids)
@@ -121,15 +169,21 @@ internal sealed class NewReportForm : Form
     {
         if (_info == null) return;
         if (_info.ExistingReportId != null) { Ui.Info("Für diese Woche gibt es schon einen Bericht."); return; }
+        var schoolDays = _types.Count(c => Ui.DayTypeKeys[Math.Max(0, c.SelectedIndex)] == "school");
+        if (schoolDays > 0 && _lernfelder.CheckedIds.Count == 0 && _subjects.Count > 0)
+        {
+            Ui.Info("Bitte mindestens ein Lernfeld für die Schultage auswählen.");
+            return;
+        }
         var req = new GenerateRequest
         {
             StartDate = _info.StartDate,
-            UnitId = _units.ElementAtOrDefault(_unit.SelectedIndex - 1)?.Id,
+            UnitId = SelectedUnit?.Id,
             DepartmentIds = _topics.CheckedIndices.Cast<int>().Select(i => _topicList[i].Id).ToList(),
             Count = (int)_count.Value,
             CountMax = _countMax.Value > _count.Value ? (int)_countMax.Value : 0,
             CountMode = _mode.SelectedIndex == 1 ? "per_day" : "per_week",
-            SchoolDepartmentIds = _info.SchoolDepartmentIds.Count > 0 ? _info.SchoolDepartmentIds : null,
+            SchoolDepartmentIds = schoolDays > 0 && _lernfelder.CheckedIds.Count > 0 ? _lernfelder.CheckedIds : null,
         };
         for (var i = 0; i < 5; i++) req.DayTypes[_info.StartDate.AddDays(i)] = Ui.DayTypeKeys[Math.Max(0, _types[i].SelectedIndex)];
         Ui.Try(() =>

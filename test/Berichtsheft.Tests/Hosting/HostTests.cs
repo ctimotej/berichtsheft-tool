@@ -209,7 +209,7 @@ public class HostTests
             var added = d1.GetPage(1).GetImages().ToList();
             Assert.Equal(before + 1, added.Count);
             var label = d1.GetPage(1).GetWords().First(w => w.Text.StartsWith("Ausbildender"));
-            var box = added.OrderBy(i => i.BoundingBox.Left).Last().BoundingBox;              // the new picture sits in the Ausbilder column ...
+            var box = added.OrderBy(i => i.Bounds.Left).Last().Bounds;                          // the new picture sits in the Ausbilder column ...
             Assert.InRange((box.Left + box.Right) / 2, label.BoundingBox.Left - 20, label.BoundingBox.Right + 120);
             Assert.True(box.Bottom > label.BoundingBox.Top);                        // ... above the label
         }

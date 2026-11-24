@@ -37,8 +37,13 @@ public sealed class SettingsService
     {
         var row = _db.Settings.Find(key);
         if (row?.Value == null) return null;
-        var el = JsonDocument.Parse(row.Value).RootElement.Clone();
-        return el.ValueKind == JsonValueKind.Null ? null : el;
+        try
+        {
+            using var doc = JsonDocument.Parse(row.Value);
+            var el = doc.RootElement.Clone();
+            return el.ValueKind == JsonValueKind.Null ? null : el;
+        }
+        catch (JsonException) { return null; }
     }
 
     public bool GetFlag(string key) => GetFlagRaw(key) is { } el && el.ValueKind == JsonValueKind.True;

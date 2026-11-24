@@ -1,5 +1,6 @@
 using Berichtsheft.Core.Dtos;
 using Berichtsheft.Core.Hosting;
+using Berichtsheft.Core.Services;
 
 namespace Berichtsheft.Desktop;
 
@@ -36,7 +37,8 @@ internal sealed class PlanForm : Form
             using var s = _host.Open();
             foreach (var p in s.Plan.List())
             {
-                var what = string.Join(p.Kind == "rotation" ? ", " : ", ", new[] { p.UnitName }.Concat(p.Labels).Where(x => x.Length > 0));
+                var what = string.Join(", ", new[] { p.UnitName }.Concat(p.Labels).Where(x => x.Length > 0));
+                if (what.Length == 0 && p.Kind == "school") what = "(Lernfelder des Ausbildungsjahres)";
                 var i = _grid.Rows.Add(KindNames[Array.IndexOf(Kinds, p.Kind)], Ui.Date(p.StartDate), Ui.Date(p.EndDate), what, p.Note);
                 _grid.Rows[i].Tag = p;
             }
@@ -80,7 +82,7 @@ internal sealed class PlanForm : Form
             shown = k == "school" ? subjects : topics;
             var keep = existing != null && existing.Kind == k ? existing.DepartmentIds.ToHashSet() : new HashSet<int>();
             list.Items.Clear();
-            foreach (var d in shown) list.Items.Add(d.Code.Length > 0 ? $"{d.Code}: {d.Name}" : d.Name, keep.Contains(d.Id));
+            foreach (var d in shown) list.Items.Add(d.Kind == "school" ? Curriculum.Label(d) : d.Code.Length > 0 ? $"{d.Code}: {d.Name}" : d.Name, keep.Contains(d.Id));
             list.Enabled = k != "vacation";
             unit.Enabled = k == "rotation";
         }
@@ -94,7 +96,7 @@ internal sealed class PlanForm : Form
         }
         else unit.SelectedIndex = 0;
 
-        var hint = new Label { Text = "Bei „Einsatz“ ohne Themen werden die Standard-Themen der Abteilung verwendet.", AutoSize = true, ForeColor = SystemColors.GrayText, MaximumSize = new Size(360, 0) };
+        var hint = new Label { Text = "Bei „Einsatz“ ohne Themen werden die Standard-Themen der Abteilung verwendet. Einsatz in der Abteilung „Berufsschule“ macht die Tage zu Schultagen. Berufsschule ohne Lernfelder: die des Ausbildungsjahres.", AutoSize = true, ForeColor = SystemColors.GrayText, MaximumSize = new Size(360, 0) };
         var content = Ui.Form(("Art:", kind), ("Von:", from), ("Bis:", to), ("Abteilung:", unit), ("Themen / Fächer:", list), ("", hint), ("Notiz:", note));
         using var dlg = new EditDialog(existing == null ? "Zeitraum hinzufügen" : "Zeitraum ändern", 480, content, () =>
         {

@@ -20,6 +20,8 @@ internal sealed class EditorForm : Form
     private readonly Label _state = new() { AutoSize = true };
     private readonly ListBox _dayList = new() { Dock = DockStyle.Fill, IntegralHeight = false };
     private readonly ComboBox _type = new() { DropDownStyle = ComboBoxStyle.DropDownList, Width = 130 };
+    private readonly Button _subjectsButton;
+    private readonly Label _subjectsInfo = new() { AutoSize = true, ForeColor = SystemColors.GrayText, Margin = new Padding(6, 6, 0, 0) };
     private readonly DataGridView _grid = Ui.Grid();
     private readonly TextBox _remarks = new() { Multiline = true, Height = 44, Dock = DockStyle.Fill, ScrollBars = ScrollBars.Vertical };
     private readonly Label _hoursHint = new() { AutoSize = true, ForeColor = Color.Firebrick };
@@ -54,6 +56,10 @@ internal sealed class EditorForm : Form
         var typeRow = new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true };
         typeRow.Controls.Add(Ui.Label("Tagesart:"));
         typeRow.Controls.Add(_type);
+        _subjectsButton = Ui.Button("Lernfelder…", (_, _) => Ui.Try(ChooseSubjects), 100);
+        _subjectsButton.Margin = new Padding(12, 2, 0, 0);
+        typeRow.Controls.Add(_subjectsButton);
+        typeRow.Controls.Add(_subjectsInfo);
 
         _grid.ReadOnly = false;
         _grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -218,6 +224,8 @@ internal sealed class EditorForm : Form
         _loading = true;
         _type.SelectedIndex = Math.Max(0, Array.IndexOf(Ui.DayTypeKeys, d.Type));
         _loading = was;
+        _subjectsButton.Visible = d.Type == "school";
+        _subjectsInfo.Text = d.Type == "school" ? SubjectsText(d) : "";
         foreach (var e in d.Entries) _grid.Rows.Add(e.Text, Scheduling.FormatHours(e.Hours));
         for (var i = 0; i < d.Entries.Count; i++) _grid.Rows[i].Tag = d.Entries[i];
     }
@@ -348,10 +356,11 @@ internal sealed class EditorForm : Form
             }
             else if (type == "school")
             {
-                var subjects = day.SubjectIds.Count > 0 ? day.SubjectIds : s.Catalog.ActiveIds("school");
+                var subjects = day.SubjectIds.Count > 0 ? day.SubjectIds : s.Reports.SchoolSubjectsOf(_id, day.Date);
                 try
                 {
                     day.Entries = s.Reports.SchoolDayEntries(_id, new SchoolDayRequest { Date = day.Date, SubjectIds = subjects, ExcludeSnippetIds = UsedSnippets().ToList(), Count = cfg.SchoolEntriesPerDay });
+                    day.SubjectIds = subjects.ToList();
                 }
                 catch (Berichtsheft.Core.AppError) { day.Entries = new() { new ReportEntry { Text = "Berufsschule", Hours = cfg.FillHours ? cfg.SchoolHoursPerDay : null } }; }
             }
@@ -361,10 +370,44 @@ internal sealed class EditorForm : Form
         RefreshDay();
     }
 
+    private Dictionary<int, string> _subjectCodes = new();
+
+    private string SubjectsText(ReportDay d)
+    {
+        if (d.SubjectIds.Count == 0) return "Lernfelder: Standard des Ausbildungsjahres";
+        if (_subjectCodes.Count == 0)
+        {
+            using var s = _host.Open();
+            _subjectCodes = s.Catalog.ListDepartments(kind: "school").ToDictionary(x => x.Id, x => x.Code.Length > 0 ? x.Code : x.Name);
+        }
+        var names = d.SubjectIds.Select(i => _subjectCodes.GetValueOrDefault(i, "?")).ToList();
+        return "Lernfelder: " + (names.Count > 6 ? string.Join(", ", names.Take(6)) + $" … (+{names.Count - 6})" : string.Join(", ", names));
+    }
+
+    /// <summary>Choose the Lernfelder of a school day; its topics are replaced by new ones from these Lernfelder.</summary>
+    private void ChooseSubjects()
+    {
+        var day = Current;
+        if (day == null || day.Type != "school") return;
+        using var s = _host.Open();
+        var cfg = s.Settings.Get();
+        var subjects = s.Catalog.ListDepartments(onlyActive: true, kind: "school");
+        var current = day.SubjectIds.Count > 0 ? day.SubjectIds : s.Reports.SchoolSubjectsOf(_id, day.Date);
+        var chosen = LernfeldPicker.Pick(this, $"Lernfelder für {Ui.Day(day.Date)}", subjects, Curriculum.SpecializationOf(cfg.Profession), current);
+        if (chosen == null) return;
+        var hasText = day.Entries.Any(e => e.Text.Trim().Length > 0);
+        if (hasText && !Ui.Confirm("Die Einträge dieses Tages durch neue Themen aus den gewählten Lernfeldern ersetzen?")) return;
+        var used = UsedSnippets();
+        foreach (var e in day.Entries) if (e.SnippetId is { } sid) used.Remove(sid); // the day's own topics may come again
+        day.Entries = s.Reports.SchoolDayEntries(_id, new SchoolDayRequest { Date = day.Date, SubjectIds = chosen, ExcludeSnippetIds = used.ToList(), Count = cfg.SchoolEntriesPerDay });
+        day.SubjectIds = chosen;
+        RefreshDay();
+    }
+
     // ------------------------------------------------------------ report actions
     private void RegenerateAll()
     {
-        if (!Ui.Confirm("Alle Einträge der Betriebstage neu erzeugen? Manuelle Änderungen gehen verloren.")) return;
+        if (!Ui.Confirm("Alle Einträge der Betriebstage neu erzeugen? Manuelle Änderungen an diesen Tagen gehen verloren.\n\n(Schultage behalten ihre Themen – dafür gibt es „Lernfelder…“.)")) return;
         using (var s = _host.Open())
         {
             var (_, warnings) = s.Reports.Regenerate(_id);

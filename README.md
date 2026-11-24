@@ -21,9 +21,15 @@ from the plan) → edit the lines → *Unterschreiben* → *In Word öffnen* / *
   German public holidays (per federal state) pre-marked, school/vacation/sick days per weekday
 - **Planung:** rotation (Abteilung per period), Berufsschule block weeks and vacation as date ranges;
   new reports take day types, Abteilung and Themen from it
-- **Berufsschule:** subjects/Lernfelder with lesson topics. Choose the subjects per school day (preset from
-  the school block); the day is filled with topics of these subjects, e.g. „LF 3: IPv4-Adressierung“.
-  In the editor, „Fächer ✎“ swaps a day's topics for other subjects.
+- **Berufsschule:** all Lernfelder of the Fachinformatiker training are included (LF1–LF9 for all, LF10–LF12 for
+  Anwendungsentwicklung (a), Systemintegration (b), Daten- und Prozessanalyse (c) and Digitale Vernetzung (d)), each with
+  lesson topics. School days are filled with topics like „LF3: Subnetting: Netz- und Hostanteil berechnen“, chosen by
+  **Ausbildungsjahr**: 1st year LF1–LF5, 2nd year LF6–LF9, 3rd year LF10–LF12 of your Fachrichtung (*Beruf / Fachrichtung*
+  in the settings). Within the year the **date** decides: the Lernfelder follow each other in order, each for a share of the
+  year matching its hours (e.g. 1st year from August: LF1 until mid-September, then LF2, …; around a change both are used).
+  This can be switched off in the settings (then all Lernfelder of the year). Any Lernfeld can be selected instead – in *Neuer Bericht* (list „Lernfelder“) or per day in the editor
+  (*Lernfelder…*). The Abteilung **„Berufsschule“** turns a whole week into school days (choose it in *Neuer Bericht* or as
+  „Einsatz“ in the plan); a Berufsschule block in the plan without Lernfelder uses those of the Ausbildungsjahr.
 - **Line wrapping:** entries longer than a form line continue on the next line (width per template,
   default 95 characters); the editor shows how many lines each day really needs
 - **Wochenübersicht:** every week of the training as a grid – missing, draft, signed,
