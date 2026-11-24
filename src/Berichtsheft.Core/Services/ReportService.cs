@@ -96,9 +96,9 @@ public sealed class ReportService
         var cfg = SettingsSvc.Get();
         var (monday, friday) = Scheduling.WeekBounds(anyDay);
         var iso = Iso(monday);
-        int? existing = Db.Reports.Where(r => r.StartDate == monday).Select(r => (int?)r.Id).AsEnumerable().FirstOrDefault();
+        var existing = ExistingReportOfWeek(monday);
         var holidays = Holidays.HolidaysBetween(monday, friday, cfg.FederalState);
-        var (planTypes, lernfelder) = Plan.DayPlan(monday, friday);
+        var (planTypes, planLernfelder) = Plan.DayPlan(monday, friday);
         var (planUnit, planTopics) = Plan.Rotation(monday, friday);
         var dayTypes = new Dictionary<DateOnly, string>();
         for (var i = 0; i < 5; i++)
@@ -106,6 +106,10 @@ public sealed class ReportService
             var d = monday.AddDays(i);
             dayTypes[d] = holidays.ContainsKey(d) ? "holiday" : planTypes.GetValueOrDefault(d, "work");
         }
+        var lernfelder = DefaultSchoolSubjects(null, planLernfelder, monday, cfg).Ids;
+        // a week of school days only belongs to the Abteilung "Berufsschule"
+        if (planUnit == null && planTopics.Count == 0 && dayTypes.Values.Any(t => t == "school") && dayTypes.Values.All(t => t is "school" or "holiday" or "vacation"))
+            planUnit = Units.SchoolUnitId();
         var number = ComputeReportNumber(cfg.TrainingStartDate, monday);
         return new WeekInfo
         {
@@ -131,7 +135,44 @@ public sealed class ReportService
     private string NextNumber()
     {
         var last = Db.Reports.OrderByDescending(r => r.StartDate).Select(r => r.ReportNumber).AsEnumerable().FirstOrDefault();
-        return last != null && last.Length > 0 && last.All(char.IsAsciiDigit) ? (int.Parse(last) + 1).ToString() : "";
+        return last != null && last.Length is > 0 and < 9 && last.All(char.IsAsciiDigit) ? (int.Parse(last) + 1).ToString() : "";
+    }
+
+    /// <summary>Report of the week of <paramref name="anyDay"/> (also reports that do not start on Monday).</summary>
+    private int? ExistingReportOfWeek(DateOnly anyDay)
+    {
+        var (monday, _) = Scheduling.WeekBounds(anyDay);
+        var sunday = monday.AddDays(6);
+        return Db.Reports.Where(r => r.StartDate >= monday && r.StartDate <= sunday).OrderBy(r => r.Id).Select(r => (int?)r.Id).AsEnumerable().FirstOrDefault();
+    }
+
+    // ================================================================ Berufsschule
+    /// <summary>The Lernfelder of the Ausbildungsjahr at <paramref name="date"/>: LF1–LF5 in the 1st year, LF6–LF9 in the 2nd,
+    /// LF10–LF12 of the own Fachrichtung (from the profession in the settings) in the 3rd. Without a training start or when no
+    /// Lernfeld matches, all active subjects are returned with a hint.</summary>
+    public (List<int> Ids, string? Hint) SchoolSubjectsFor(DateOnly date, AppSettings? cfg = null)
+    {
+        cfg ??= SettingsSvc.Get();
+        var subjects = Catalog.ListDepartments(onlyActive: true, kind: "school");
+        if (cfg.TrainingStartDate is not { } start)
+            return (subjects.Select(d => d.Id).ToList(), "Ohne Ausbildungsbeginn (Einstellungen) ist das Ausbildungsjahr unbekannt – es wurden alle Lernfelder verwendet.");
+        var year = CoverageService.TrainingYearNumber(start, date);
+        var spec = Curriculum.SpecializationOf(cfg.Profession);
+        var list = Curriculum.ForYear(subjects, year, spec);
+        string? hint = null;
+        if (year >= 3 && spec == null && list.Any(d => Curriculum.Parse(d)?.Variant != null))
+            hint = "Für das 3. Ausbildungsjahr bitte in den Einstellungen den Beruf (Fachrichtung) wählen – sonst werden die Lernfelder 10–12 aller Fachrichtungen gemischt.";
+        if (list.Count == 0)
+            return (subjects.Select(d => d.Id).ToList(), $"Für das {Math.Min(year, 3)}. Ausbildungsjahr sind keine Lernfelder angelegt – es wurden alle Fächer verwendet.");
+        return (list.Select(d => d.Id).ToList(), hint);
+    }
+
+    /// <summary>Subjects for the school days of a report: request &gt; school block in the plan &gt; Ausbildungsjahr.</summary>
+    private (List<int> Ids, string? Hint) DefaultSchoolSubjects(List<int>? requested, List<int> planned, DateOnly date, AppSettings cfg)
+    {
+        if (requested is { Count: > 0 }) return (requested.ToList(), null);
+        if (planned.Count > 0) return (planned.ToList(), null);
+        return SchoolSubjectsFor(date, cfg);
     }
 
     // ================================================================ generate
@@ -158,17 +199,28 @@ public sealed class ReportService
         if (dates.Count == 0) throw new InvalidInputError("Der gewählte Zeitraum enthält keine Arbeitstage.");
         var holidays = Holidays.HolidaysBetween(start, end, cfg.FederalState);
         var (planTypes, planLernfelder) = Plan.DayPlan(start, end);
+        // Abteilung "Berufsschule": days without an explicit type are school days (holidays and vacation stay)
+        var defaultType = Units.IsSchool(req.UnitId) ? "school" : "work";
         var dayTypes = dates.ToDictionary(d => d, d =>
-            req.DayTypes.TryGetValue(d, out var t) && t.Length > 0 ? t : holidays.ContainsKey(d) ? "holiday" : planTypes.GetValueOrDefault(d, "work"));
+            req.DayTypes.TryGetValue(d, out var t) && t.Length > 0 ? t
+            : holidays.ContainsKey(d) ? "holiday"
+            : planTypes.TryGetValue(d, out var pt) ? pt   // vacation or school block from the plan
+            : defaultType);
         var workDays = dates.Where(d => dayTypes[d] == "work").ToList();
         var schoolDays = dates.Where(d => dayTypes[d] == "school").ToList();
 
         var warnings = new List<string>();
         var recent = req.AvoidRecent ? RecentSnippetIds(cfg, start) : new HashSet<int>();
         var schoolEntries = new Dictionary<DateOnly, List<ReportEntry>>();
-        var defaultSubjects = req.SchoolDepartmentIds ?? planLernfelder;
+        List<int> defaultSubjects = new();
+        if (schoolDays.Count > 0)
+        {
+            var (ids, hint) = DefaultSchoolSubjects(req.SchoolDepartmentIds, planLernfelder, start, cfg);
+            defaultSubjects = ids;
+            if (hint != null && cfg.SchoolTopics && schoolDays.Any(d => !req.DaySubjects.TryGetValue(d, out var s) || s.Count == 0)) warnings.Add(hint);
+        }
         var daySubjects = schoolDays.ToDictionary(d => d, d =>
-            (req.DaySubjects.TryGetValue(d, out var s) && s.Count > 0 ? s : defaultSubjects ?? new()).ToList());
+            (req.DaySubjects.TryGetValue(d, out var s) && s.Count > 0 ? s : defaultSubjects).ToList());
         if (schoolDays.Count > 0 && cfg.SchoolTopics)
         {
             var groups = new List<(List<int> Subjects, List<DateOnly> Days)>();
@@ -215,7 +267,7 @@ public sealed class ReportService
             if (t == "work")
             {
                 var picked = new List<GeneratedEntry>();
-                for (var i = 0; i < perDay[d]; i++) { entries.MoveNext(); picked.Add(entries.Current); }
+                for (var i = 0; i < perDay[d] && entries.MoveNext(); i++) picked.Add(entries.Current);
                 var hours = req.FillHours ? Scheduling.DistributeHours(cfg.HoursPerDay, picked.Count).Select(h => (double?)h).ToList()
                                           : picked.Select(_ => (double?)null).ToList();
                 list = picked.Select((e, i) => new ReportEntry { Text = e.Text, Hours = hours[i] is > 0 ? hours[i] : null, SnippetId = e.SnippetId, DepartmentId = e.DepartmentId }).ToList();
@@ -268,7 +320,8 @@ public sealed class ReportService
         foreach (var d in schoolDays)
         {
             var picked = result.Entries.Skip(idx).Take(n).ToList(); idx += n;
-            var hours = fillHours ? Scheduling.DistributeHours(cfg.SchoolHoursPerDay, n).Select(h => (double?)h).ToList() : picked.Select(_ => (double?)null).ToList();
+            if (picked.Count == 0) continue;
+            var hours = fillHours ? Scheduling.DistributeHours(cfg.SchoolHoursPerDay, picked.Count).Select(h => (double?)h).ToList() : picked.Select(_ => (double?)null).ToList();
             outp[d] = picked.Select((e, i) => new ReportEntry { Text = e.Text, Hours = hours[i] is > 0 ? hours[i] : null, SnippetId = e.SnippetId, DepartmentId = e.DepartmentId }).ToList();
         }
         return (outp, warnings);
@@ -300,10 +353,16 @@ public sealed class ReportService
     public (ReportEntity Report, List<string> Warnings) Generate(GenerateRequest req)
     {
         var cfg = SettingsSvc.Get();
+        if (ExistingReportOfWeek(req.StartDate) != null)
+        {
+            var (y, w) = Iso(Scheduling.WeekBounds(req.StartDate).Monday);
+            throw new InvalidInputError($"Für KW {w}/{y} gibt es schon einen Bericht.");
+        }
         var (days, start, end, warnings) = BuildDays(req, cfg);
-        var (_, names) = Catalog.BuildPool(req.DepartmentIds, strict: false);
         var unitName = Units.NameOf(req.UnitId);
         if (req.UnitId is > 0 && unitName.Length == 0) throw new InvalidInputError("Die ausgewählte Abteilung existiert nicht (mehr).");
+        if (unitName.Length == 0 && days.Any(d => d.Type == "school") && days.All(d => d.Type is "school" or "holiday" or "vacation"))
+            unitName = UnitService.SchoolUnitName; // a pure school week
         var iso = Iso(start);
         var options = JsonSerializer.SerializeToElement(new Dictionary<string, object?>
         {
@@ -407,9 +466,23 @@ public sealed class ReportService
             SchoolDepartmentIds = Opt<List<int>?>(r, "school_department_ids", null),
         };
         var (days, _, _, warnings) = BuildDays(req, cfg);
+        // only the Betriebstage are regenerated: school topics, vacation etc. keep what the user has (edited)
+        foreach (var d in days)
+            if (d.Type != "work" && oldDays.FirstOrDefault(o => o.Date == d.Date) is { } old && old.Entries.Count > 0)
+            {
+                d.Entries = old.Entries;
+                d.SubjectIds = old.SubjectIds;
+            }
         SetDays(r, days);
         Db.SaveChanges();
         return (r, warnings);
+    }
+
+    /// <summary>The subjects a school day of this report uses by default (editor: switching a day to Berufsschule).</summary>
+    public List<int> SchoolSubjectsOf(int reportId, DateOnly date)
+    {
+        var r = Get(reportId);
+        return DefaultSchoolSubjects(Opt<List<int>?>(r, "school_department_ids", null), Plan.DayPlan(r.StartDate, r.EndDate).Lernfelder, date, SettingsSvc.Get()).Ids;
     }
 
     /// <summary>One replacement entry for a line: school topics on school days, departments otherwise.</summary>
@@ -420,10 +493,9 @@ public sealed class ReportService
         List<int> ids;
         if (req.School || day?.Type == "school")
         {
-            ids = day is { SubjectIds.Count: > 0 } ? day.SubjectIds : Opt<List<int>?>(r, "school_department_ids", null) is { Count: > 0 } o ? o : new();
-            if (ids.Count == 0) ids = Plan.DayPlan(r.StartDate, r.EndDate).Lernfelder;
-            if (ids.Count == 0) ids = Catalog.ActiveIds("school");
-            if (ids.Count == 0) throw new InvalidInputError("Es sind keine Lernfelder angelegt.");
+            ids = day is { SubjectIds.Count: > 0 } ? day.SubjectIds
+                : DefaultSchoolSubjects(Opt<List<int>?>(r, "school_department_ids", null), Plan.DayPlan(r.StartDate, r.EndDate).Lernfelder, req.Date, SettingsSvc.Get()).Ids;
+            if (ids.Count == 0) throw new InvalidInputError("Es sind keine Lernfelder angelegt (Extras > Themen und Textbausteine).");
         }
         else
         {
@@ -692,6 +764,7 @@ public sealed class ReportService
             else if (workdays == 0 && !types.Values.Any(t => t == "school")) action = "no_workdays";
             else action = "create";
             var unitName = Units.NameOf(unitId);
+            if (unitName.Length == 0 && workdays == 0 && types.Values.Any(t => t == "school")) unitName = UnitService.SchoolUnitName;
             var week = new BulkWeek
             {
                 StartDate = monday, EndDate = friday, CalendarWeek = info.CalendarWeek, Year = info.Year, ReportNumber = info.ReportNumber,

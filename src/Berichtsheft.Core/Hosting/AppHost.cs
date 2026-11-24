@@ -17,6 +17,8 @@ public sealed class AppHost : IDisposable
 {
     public AppConfig Config { get; }
     public BerichtsheftContext Context { get; }
+    /// <summary>Message for the user from the start-up (e.g. an old database was set aside), or null.</summary>
+    public string? StartupNotice { get; }
     private readonly ILoggerFactory _loggers;
     private readonly DbContextOptions<BerichtsheftDbContext> _dbOptions;
 
@@ -42,6 +44,8 @@ public sealed class AppHost : IDisposable
         };
         _dbOptions = BerichtsheftDbContextOptionsFactory.Create(config.DbPath);
 
+        StartupNotice = DatabaseGuard.SetAsideIfForeign(config.DbPath);
+        if (StartupNotice != null) _loggers.CreateLogger<AppHost>().LogWarning("Foreign database set aside: {Notice}", StartupNotice);
         using var db = new BerichtsheftDbContext(_dbOptions);
         db.Database.Migrate();
         try { Seeder.SeedIfNeeded(db, Context); }

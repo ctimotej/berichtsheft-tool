@@ -74,7 +74,14 @@ internal static class Ui
         var dir = Path.Combine(Path.GetTempPath(), "Berichtsheft");
         Directory.CreateDirectory(dir);
         var path = Path.Combine(dir, name);
-        File.WriteAllBytes(path, data);
+        for (var i = 2; ; i++)
+        {
+            try { File.WriteAllBytes(path, data); break; }
+            catch (IOException) when (i < 20) // still open in Word: use another name
+            {
+                path = Path.Combine(dir, $"{Path.GetFileNameWithoutExtension(name)} ({i}){Path.GetExtension(name)}");
+            }
+        }
         OpenFile(path);
     }
 

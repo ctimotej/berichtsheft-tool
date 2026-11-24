@@ -8,3 +8,7 @@ dist/
 artifacts/
 *.user
 .vs/
+
+# Python caches (tools/make-icon.py)
+__pycache__/
+*.pyc

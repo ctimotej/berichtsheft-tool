@@ -8,7 +8,7 @@ namespace Berichtsheft.Desktop;
 
 internal static class Program
 {
-    public const string Version = "2.0.0";
+    public const string Version = "2.1.0";
     private const string ShowEventName = @"Local\BerichtsheftGenerator.Show";
 
     /// <summary>Berichtsheft.exe                                      start the program
@@ -58,7 +58,13 @@ internal static class Program
             return 1;
         }
 
+        if (host.StartupNotice is { } notice) MessageBox.Show(notice, Ui.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         Application.ThreadException += (_, e) => Ui.ShowError(e.Exception);
+        AppDomain.CurrentDomain.UnhandledException += (_, e) =>
+        {
+            try { File.AppendAllText(Path.Combine(host.Config.LogsDir, "app.log"), $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} CRASH {e.ExceptionObject}{Environment.NewLine}"); }
+            catch (IOException) { }
+        };
         using (host)
         {
             var main = new MainForm(host, startHidden);

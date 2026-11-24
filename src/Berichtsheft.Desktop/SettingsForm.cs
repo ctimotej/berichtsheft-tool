@@ -26,6 +26,11 @@ internal sealed class SettingsForm : Form
     private readonly CheckBox _autostart = new() { Text = "Mit Windows starten (versteckt im Infobereich)", AutoSize = true };
     private readonly CheckBox _reminder = new() { Text = "Erinnern, wenn ein Bericht fehlt (freitags und für frühere Wochen)", AutoSize = true };
     private readonly CheckBox _trainerMode = new() { Text = "Ausbilder-Modus anbieten (Menü „Ansicht“): Berichtshefte per Drag & Drop unterschreiben", AutoSize = true };
+    private readonly Label _professionHint = new()
+    {
+        Text = "Bestimmt die Lernfelder der Berufsschule: 1. Jahr LF1–5, 2. Jahr LF6–9, 3. Jahr LF10–12 der Fachrichtung.",
+        AutoSize = true, ForeColor = SystemColors.GrayText, MaximumSize = new Size(330, 0),
+    };
     private readonly Label _sigState = new() { AutoSize = true, Margin = new Padding(6, 6, 0, 0) };
     private AppSettings _cfg = new();
 
@@ -35,7 +40,7 @@ internal sealed class SettingsForm : Form
     public SettingsForm(AppHost host, bool trainerMode = false)
     {
         _host = host;
-        Ui.Dialog(this, "Einstellungen", 520, trainerMode ? 230 : 770);
+        Ui.Dialog(this, "Einstellungen", 540, trainerMode ? 230 : 800);
         _state.Items.AddRange(States.Select(s => (object)(s.Length == 0 ? "(keins – keine Feiertage)" : s)).ToArray());
         _mode.Items.AddRange(new object[] { "pro Woche", "pro Tag" });
 
@@ -50,7 +55,7 @@ internal sealed class SettingsForm : Form
 
         // Ausbilder mode: only what matters there (tray, autostart); the report settings keep their values
         var form = trainerMode ? Ui.Form(("", _tray), ("", _autostart), ("", _trainerMode)) : Ui.Form(
-            ("Name:", _name), ("Ausbildungsbetrieb:", _company), ("Beruf:", _profession),
+            ("Name:", _name), ("Ausbildungsbetrieb:", _company), ("Beruf / Fachrichtung:", _profession), ("", _professionHint),
             ("Ausbildungsbeginn:", _start), ("Ausbildungsende:", _end), ("Bundesland (Feiertage):", _state),
             ("Stunden pro Arbeitstag:", _hours), ("Stunden pro Schultag:", _schoolHours),
             ("Einträge (von – bis pro Tag):", countRow), ("Themen der letzten Berichte meiden:", _recent),
@@ -74,10 +79,10 @@ internal sealed class SettingsForm : Form
         _name.Text = _cfg.TraineeName; _company.Text = _cfg.Company;
         SetDate(_start, _cfg.TrainingStartDate); SetDate(_end, _cfg.TrainingEndDate);
         _state.SelectedIndex = Math.Max(0, Array.IndexOf(States, _cfg.FederalState));
-        _hours.Value = (decimal)_cfg.HoursPerDay; _schoolHours.Value = (decimal)_cfg.SchoolHoursPerDay;
-        _count.Value = _cfg.DefaultCount; _countMax.Value = Math.Max(_cfg.DefaultCount, _cfg.DefaultCountMax); _mode.SelectedIndex = _cfg.DefaultCountMode == "per_day" ? 1 : 0;
-        _recent.Value = _cfg.AvoidRecentReports; _fill.Checked = _cfg.FillHours; _school.Checked = _cfg.SchoolTopics;
-        _schoolEntries.Value = _cfg.SchoolEntriesPerDay; _overdue.Value = _cfg.OverdueDays;
+        SetNum(_hours, _cfg.HoursPerDay); SetNum(_schoolHours, _cfg.SchoolHoursPerDay);
+        SetNum(_count, _cfg.DefaultCount); SetNum(_countMax, Math.Max(_cfg.DefaultCount, _cfg.DefaultCountMax)); _mode.SelectedIndex = _cfg.DefaultCountMode == "per_day" ? 1 : 0;
+        SetNum(_recent, _cfg.AvoidRecentReports); _fill.Checked = _cfg.FillHours; _school.Checked = _cfg.SchoolTopics;
+        SetNum(_schoolEntries, _cfg.SchoolEntriesPerDay); SetNum(_overdue, _cfg.OverdueDays);
         _tray.Checked = _cfg.TrayEnabled; _autostart.Checked = _cfg.AutostartEnabled; _reminder.Checked = _cfg.ReminderEnabled; _trainerMode.Checked = _cfg.TrainerModeEnabled;
         _tray.CheckedChanged += (_, _) => TrayChanged();
         TrayChanged();
@@ -87,6 +92,8 @@ internal sealed class SettingsForm : Form
     {
         _autostart.Enabled = _reminder.Enabled = _tray.Checked;
     }
+
+    private static void SetNum(NumericUpDown n, double v) => n.Value = Math.Clamp((decimal)v, n.Minimum, n.Maximum);
 
     private static void SetDate(DateTimePicker p, DateOnly? d)
     {

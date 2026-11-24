@@ -1,5 +1,6 @@
 using Berichtsheft.Core.Dtos;
 using Berichtsheft.Core.Hosting;
+using Berichtsheft.Core.Services;
 
 namespace Berichtsheft.Desktop;
 
@@ -57,6 +58,16 @@ internal sealed class CatalogForm : Form
         return page;
     }
 
+    /// <summary>Name column: for Lernfelder named only "LF3" the title from the description.</summary>
+    private static string DisplayName(DepartmentOut d)
+    {
+        if (d.Kind != "school" || d.Code.Length == 0) return d.Name;
+        var label = Curriculum.Label(d);
+        return label.StartsWith(d.Code + ": ") ? label[(d.Code.Length + 2)..] : d.Name;
+    }
+
+    private static string DepLabel(DepartmentOut d) => d.Kind == "school" ? Curriculum.Label(d) : d.Code.Length > 0 ? $"{d.Code}: {d.Name}" : d.Name;
+
     private SnippetOut? Snippet() => _snips.CurrentRow?.Tag as SnippetOut;
     private DepartmentOut? Dep() => _deps.CurrentRow?.Tag as DepartmentOut;
     private UnitOut? Unit() => _units.CurrentRow?.Tag as UnitOut;
@@ -71,20 +82,20 @@ internal sealed class CatalogForm : Form
             _deps.Rows.Clear();
             foreach (var d in _depList)
             {
-                var i = _deps.Rows.Add(d.Kind == "school" ? "Fach" : "Thema", d.Code, d.Name, d.SnippetCount, d.Active ? "ja" : "");
+                var i = _deps.Rows.Add(d.Kind == "school" ? "Fach" : "Thema", d.Code, DisplayName(d), d.SnippetCount, d.Active ? "ja" : "");
                 _deps.Rows[i].Tag = d;
             }
             _units.Rows.Clear();
             foreach (var u in s.Units.List())
             {
-                var i = _units.Rows.Add(u.Name, string.Join(", ", u.TopicNames), u.Active ? "ja" : "");
+                var i = _units.Rows.Add(u.Name, u.IsSchool ? "(Berufsschule: Lernfelder des Ausbildungsjahres)" : string.Join(", ", u.TopicNames), u.Active ? "ja" : "");
                 _units.Rows[i].Tag = u;
             }
             var sel = _filter.SelectedIndex;
             _filter.SelectedIndexChanged -= FilterChanged;
             _filter.Items.Clear();
             _filter.Items.Add("(alle)");
-            _filter.Items.AddRange(_depList.Select(d => (object)(d.Code.Length > 0 ? $"{d.Code}: {d.Name}" : d.Name)).ToArray());
+            _filter.Items.AddRange(_depList.Select(d => (object)DepLabel(d)).ToArray());
             _filter.SelectedIndex = sel >= 0 && sel < _filter.Items.Count ? sel : 0;
             _filter.SelectedIndexChanged += FilterChanged;
         });
@@ -114,13 +125,13 @@ internal sealed class CatalogForm : Form
     private void EditSnippet(SnippetOut? sn)
     {
         var dep = new ComboBox { DropDownStyle = ComboBoxStyle.DropDownList };
-        dep.Items.AddRange(_depList.Select(d => (object)(d.Code.Length > 0 ? $"{d.Code}: {d.Name}" : d.Name)).ToArray());
+        dep.Items.AddRange(_depList.Select(d => (object)DepLabel(d)).ToArray());
+        if (_depList.Count == 0) { Ui.Info("Bitte zuerst ein Thema oder Fach anlegen."); return; }
         var text = new TextBox { Multiline = true, Height = 90, ScrollBars = ScrollBars.Vertical };
         var active = new CheckBox { Text = "Aktiv", Checked = sn?.Active ?? true, AutoSize = true };
         var filterDep = _filter.SelectedIndex > 0 ? _filter.SelectedIndex - 1 : 0;
         dep.SelectedIndex = sn != null ? Math.Max(0, _depList.FindIndex(d => d.Id == sn.DepartmentId)) : Math.Min(filterDep, _depList.Count - 1);
         text.Text = sn?.Text ?? "";
-        if (_depList.Count == 0) { Ui.Info("Bitte zuerst ein Thema oder Fach anlegen."); return; }
         var content = Ui.Form(("Thema / Fach:", dep), ("Text:", text), ("", active));
         using var dlg = new EditDialog(sn == null ? "Textbaustein hinzufügen" : "Textbaustein ändern", 520, content, () => Ui.Try(() =>
         {
@@ -203,10 +214,17 @@ internal sealed class CatalogForm : Form
         var list = new CheckedListBox { CheckOnClick = true, Height = 150, IntegralHeight = false };
         foreach (var t in topics) list.Items.Add(t.Name, u?.TopicIds.Contains(t.Id) ?? false);
         var active = new CheckBox { Text = "Aktiv", Checked = u?.Active ?? true, AutoSize = true };
-        var content = Ui.Form(("Name:", name), ("Standard-Themen:", list), ("", active));
+        var school = new CheckBox { Text = "Berufsschule: alle Tage sind Schultage (Themen aus den Lernfeldern)", Checked = u?.IsSchool ?? false, AutoSize = true };
+        school.CheckedChanged += (_, _) => list.Enabled = !school.Checked;
+        list.Enabled = !school.Checked;
+        var content = Ui.Form(("Name:", name), ("", school), ("Standard-Themen:", list), ("", active));
         using var dlg = new EditDialog(u == null ? "Abteilung hinzufügen" : "Abteilung ändern", 460, content, () => Ui.Try(() =>
         {
-            var data = new UnitIn { Name = name.Text, Active = active.Checked, SortOrder = u?.SortOrder ?? 0, Description = u?.Description ?? "", TopicIds = list.CheckedIndices.Cast<int>().Select(i => topics[i].Id).ToList() };
+            var data = new UnitIn
+            {
+                Name = name.Text, Active = active.Checked, SortOrder = u?.SortOrder ?? 0, Description = u?.Description ?? "", IsSchool = school.Checked,
+                TopicIds = school.Checked ? new() : list.CheckedIndices.Cast<int>().Select(i => topics[i].Id).ToList(),
+            };
             data.Validate();
             using var s = _host.Open();
             if (u == null) s.Units.Create(data); else s.Units.Update(u.Id, data);

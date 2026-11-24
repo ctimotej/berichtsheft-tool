@@ -1,0 +1,650 @@
+{
+  "format": "berichtsheft-snippets",
+  "version": 3,
+  "departments": [
+    {
+      "name": "LF10a",
+      "description": "Benutzerschnittstellen gestalten und entwickeln (3. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF10a",
+      "snippets": [
+        {
+          "text": "Betriebliche Abläufe und Geschäftsprozesse erfassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Geschäftsprozesse mit BPMN modellieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ereignisgesteuerte Prozessketten (EPK)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "UML-Aktivitätsdiagramme",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Optimierungspotenziale in Prozessen erkennen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Agiles Manifest und agile Werte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Scrum: Rollen, Events und Artefakte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "User Stories und Product Backlog",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kanban-Board einsetzen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Usability-Grundlagen nach DIN EN ISO 9241",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Barrierefreiheit nach WCAG",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wireframes und Mockups erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Prototyping mit Design-Werkzeugen (z. B. Figma)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Farbgestaltung, Typografie und Layout",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Responsive Design mit HTML und CSS",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "GUI-Frameworks und Oberflächen-Bibliotheken",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Ereignisgesteuerte Programmierung",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Oberflächen für mobile Endgeräte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Eingabevalidierung und Fehlermeldungen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Informationsfluss zwischen Oberfläche und Prozess sicherstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Privacy by Design und datenschutzfreundliche Voreinstellungen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Einwilligungsmanagement und Cookie-Banner",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Usability-Test durchführen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktionale Tests der Benutzeroberfläche",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Prozesskostenreduktion und Entwicklungskosten vergleichen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF11a",
+      "description": "Funktionalität in Anwendungen realisieren (3. Ausbildungsjahr, 80 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF11a",
+      "snippets": [
+        {
+          "text": "Informationsobjekte aus Prozessbeschreibungen ableiten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenstrukturen: Arrays, Listen und Dictionaries",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Algorithmen: Suchen und Sortieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Objektorientierung: Klassen und Objekte",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kapselung, Vererbung und Polymorphie",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Interfaces und abstrakte Klassen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "UML-Klassendiagramm erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "UML-Sequenzdiagramm erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "UML-Anwendungsfalldiagramm",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Entwurfsmuster im Überblick (z. B. MVC, Singleton)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Modulare Softwarearchitektur",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Iterative Vorgehensmodelle (Spiralmodell, Scrum)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anbindung an relationale Datenbanken",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "ORM-Frameworks",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schnittstellen dokumentieren (z. B. OpenAPI)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Exception Handling",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Clean Code und Codekonventionen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Code-Reviews im Team",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Testfälle formulieren und Testabdeckung messen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Unit-Tests schreiben",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Integrationstests",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Testautomatisierung und Continuous Integration",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Debugging-Techniken",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Module nach Kundenkriterien beurteilen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Refactoring",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "LF12a",
+      "description": "Kundenspezifische Anwendungsentwicklung durchführen (3. Ausbildungsjahr, 120 Std.)",
+      "active": true,
+      "kind": "school",
+      "code": "LF12a",
+      "snippets": [
+        {
+          "text": "Kundenauftrag und Ausgangssituation analysieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anforderungsanalyse in Zusammenarbeit mit dem Kunden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lastenheft auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektziele nach SMART formulieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Funktionale und nicht-funktionale Anforderungen unterscheiden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Schulungsbedarfe und Rahmenbedingungen ermitteln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektmanagement: Phasen und Methoden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektstrukturplan erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Zeitplanung mit Gantt-Diagramm",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Netzplantechnik und kritischer Pfad",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Personelle und technische Ressourcen planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektkosten kalkulieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Risikomanagement im Projekt",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lösungsvarianten entwickeln",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lösungsvarianten mit Nutzwertanalyse vergleichen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenschutz und Datensicherheit bei der Lösungsauswahl",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Pflichtenheft erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Angebot für den Kundenauftrag erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Technologie-Stack für das Kundenprojekt festlegen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Softwarearchitektur für das Kundenprojekt entwerfen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Datenbankschema für das Projekt entwerfen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwendung iterativ implementieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Branching-Strategie im Projekt festlegen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Testkonzept für die Anwendung erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwendung bereitstellen (Deployment)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Benutzer- und Entwicklerdokumentation erstellen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Codequalität mit statischer Codeanalyse prüfen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wartung und Weiterentwicklung der Anwendung planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Lizenzen von Open-Source-Bibliotheken prüfen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Qualitätssicherungsmaßnahmen planen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Abnahmetest mit dem Kunden",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektergebnis präsentieren",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Anwenderschulung durchführen",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Produkt und Dokumentation übergeben, Abnahmeprotokoll",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Wirtschaftlichkeit der Lösung bewerten (Amortisation)",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Skalierbarkeit und Verlässlichkeit der Lösung bewerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Projektabschluss und Lessons Learned",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        },
+        {
+          "text": "Kritisch-konstruktives Kundenfeedback auswerten",
+          "category": "Berufsschule",
+          "difficulty": "",
+          "tags": [],
+          "active": true
+        }
+      ]
+    }
+  ],
+  "units": []
+}

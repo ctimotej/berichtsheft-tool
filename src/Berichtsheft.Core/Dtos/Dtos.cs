@@ -250,6 +250,8 @@ public class UnitIn
     public bool Active { get; set; } = true;
     public int SortOrder { get; set; }
     public List<int> TopicIds { get; set; } = new();
+    /// <summary>The Abteilung "Berufsschule": its weeks consist of school days filled with Lernfeld topics.</summary>
+    public bool IsSchool { get; set; }
 
     public void Validate()
     {

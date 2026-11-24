@@ -79,7 +79,7 @@ internal sealed class SignForm : Form
     private readonly CheckBox _saveDefault = new() { Text = "Als Standard-Unterschrift speichern", AutoSize = true, Checked = true };
     private byte[]? _fileImage;
     private readonly Label _fileInfo = new() { AutoSize = true, ForeColor = SystemColors.GrayText };
-    public SignRequest? Result { get; private set; }
+    public SignRequest? Result { get; set; }
 
     public SignForm(bool hasDefault, string heading, bool showSaveDefault = true)
     {
@@ -150,14 +150,16 @@ internal sealed class SignForm : Form
         if (form.ShowDialog(owner) != DialogResult.OK || form.Result == null) return 0;
         var done = 0;
         var failures = new List<string>();
+        var warnings = new List<string>();
         using var session = host.Open();
         foreach (var id in ids)
         {
             try
             {
-                var (_, warnings) = session.Reports.Sign(id, form.Result);
-                Ui.Warnings(warnings);
+                var (_, w) = session.Reports.Sign(id, form.Result);
+                warnings.AddRange(w);
                 done++;
+                if (form.Result.SaveAsDefault) form.Result = new SignRequest { UseDefault = true }; // stored once, then reused
             }
             catch (Berichtsheft.Core.AppError exc)
             {
@@ -165,6 +167,7 @@ internal sealed class SignForm : Form
                 failures.Add(exc.Message);
             }
         }
+        Ui.Warnings(warnings.Distinct());
         if (failures.Count > 0) Ui.Info(string.Join("\n", failures.Distinct()));
         return done;
     }

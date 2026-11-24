@@ -20,7 +20,7 @@ public static class SignatureVault
     public static byte[] Protect(byte[] image)
     {
         var scheme = OperatingSystem.IsWindows() ? Dpapi : Plain;
-        var payload = scheme == Dpapi ? ProtectDpapi(image) : image;
+        var payload = OperatingSystem.IsWindows() ? ProtectDpapi(image) : image;
         var result = new byte[Magic.Length + 1 + payload.Length];
         Magic.CopyTo(result, 0);
         result[Magic.Length] = scheme;
@@ -42,6 +42,7 @@ public static class SignatureVault
         };
     }
 
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     private static byte[] ProtectDpapi(byte[] data) =>
         System.Security.Cryptography.ProtectedData.Protect(data, Entropy, DataProtectionScope.CurrentUser);
 
