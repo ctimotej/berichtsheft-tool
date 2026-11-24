@@ -66,6 +66,44 @@ public static class Curriculum
             .Select(x => x.d).ToList();
     }
 
+    private static readonly Regex HoursRx = new(@"(\d+)\s*Std", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    /// <summary>Lesson hours of a Lernfeld from its description ("… (1. Ausbildungsjahr, 80 Std.)"); 80 if not given.</summary>
+    public static int HoursOf(DepartmentOut d) =>
+        HoursRx.Match(d.Description ?? "") is { Success: true } m && int.Parse(m.Groups[1].Value) is > 0 and var h ? h : 80;
+
+    /// <summary>Overlap around the week (one month each side): around a change of Lernfeld both are taught.</summary>
+    public const double OverlapShare = 1.0 / 12;
+
+    /// <summary>The Lernfelder taught at <paramref name="date"/>. The Lernfelder of the Ausbildungsjahr follow each other in the
+    /// order of their numbers, each taking a share of the year proportional to its hours (1st year: LF1 40 h = first eighth,
+    /// LF2 80 h = next quarter, …). Near a change both Lernfelder are returned. In years after the 3rd (extended training)
+    /// all Lernfelder of the 3rd year are returned.</summary>
+    public static List<DepartmentOut> ForDate(IEnumerable<DepartmentOut> subjects, DateOnly trainingStart, DateOnly date, Specialization? spec)
+    {
+        var year = CoverageService.TrainingYearNumber(trainingStart, date);
+        var list = ForYear(subjects, year, spec);
+        if (year > 3 || list.Count <= 1) return list;
+
+        var yearStart = trainingStart.AddYears(year - 1);
+        var yearEnd = trainingStart.AddYears(year);
+        var pos = Math.Clamp((date.DayNumber - yearStart.DayNumber) / (double)(yearEnd.DayNumber - yearStart.DayNumber), 0, 1);
+
+        // one slot per Lernfeld number (without a Fachrichtung LF10a–d share the slot of LF10)
+        var slots = list.GroupBy(d => Parse(d)!.Value.Number).OrderBy(g => g.Key)
+            .Select(g => (Number: g.Key, Hours: g.Max(HoursOf))).ToList();
+        var total = (double)slots.Sum(s => s.Hours);
+        var active = new HashSet<int>();
+        var from = 0.0;
+        foreach (var (number, hours) in slots)
+        {
+            var to = from + hours / total;
+            if (from < pos + OverlapShare && to > pos - OverlapShare) active.Add(number);
+            from = to;
+        }
+        return list.Where(d => active.Contains(Parse(d)!.Value.Number)).ToList();
+    }
+
     /// <summary>Sort key so that LF2 comes before LF10 and other subjects after the Lernfelder.</summary>
     public static (int, int, string) SortKey(DepartmentOut d) =>
         Parse(d) is { } p ? (0, p.Number * 10 + (p.Variant is { } v ? v - 'a' + 1 : 0), "") : (1, 0, d.Name.ToLowerInvariant());

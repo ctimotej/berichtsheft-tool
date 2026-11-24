@@ -158,7 +158,7 @@ public sealed class ReportService
             return (subjects.Select(d => d.Id).ToList(), "Ohne Ausbildungsbeginn (Einstellungen) ist das Ausbildungsjahr unbekannt – es wurden alle Lernfelder verwendet.");
         var year = CoverageService.TrainingYearNumber(start, date);
         var spec = Curriculum.SpecializationOf(cfg.Profession);
-        var list = Curriculum.ForYear(subjects, year, spec);
+        var list = cfg.SchoolSubjectsByDate ? Curriculum.ForDate(subjects, start, date, spec) : Curriculum.ForYear(subjects, year, spec);
         string? hint = null;
         if (year >= 3 && spec == null && list.Any(d => Curriculum.Parse(d)?.Variant != null))
             hint = "Für das 3. Ausbildungsjahr bitte in den Einstellungen den Beruf (Fachrichtung) wählen – sonst werden die Lernfelder 10–12 aller Fachrichtungen gemischt.";

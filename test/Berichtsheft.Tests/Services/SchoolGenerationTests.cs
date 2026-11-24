@@ -15,8 +15,9 @@ public class SchoolGenerationTests
 {
     private static readonly Regex LfPrefix = new(@"^(LF\d+[a-d]?): ");
 
-    private static void Setup(AppHost.Session s, string profession = "Fachinformatiker für Systemintegration") =>
-        s.Settings.Update(new AppSettings { TraineeName = "Max", TrainingStartDate = new DateOnly(2026, 8, 1), Profession = profession });
+    /// <summary>Training from 01.08.2026; <paramref name="byDate"/> off = all Lernfelder of the Ausbildungsjahr.</summary>
+    private static void Setup(AppHost.Session s, string profession = "Fachinformatiker für Systemintegration", bool byDate = false) =>
+        s.Settings.Update(new AppSettings { TraineeName = "Max", TrainingStartDate = new DateOnly(2026, 8, 1), Profession = profession, SchoolSubjectsByDate = byDate });
 
     private static HashSet<string> Codes(ReportOut r) =>
         r.Days.SelectMany(d => d.Entries).Select(e => LfPrefix.Match(e.Text)).Where(m => m.Success).Select(m => m.Groups[1].Value).ToHashSet();
@@ -218,6 +219,54 @@ public class SchoolGenerationTests
         Assert.All(week.Days, d => Assert.Equal("school", d.Type));
         Assert.Equal(r.Days.SelectMany(d => d.Entries).Select(e => e.Text), week.Days.SelectMany(d => d.Entries).Select(e => e.Text));
         Assert.Equal("Berufsschule", week.DepartmentLabel);
+    }
+
+    // ---------------------------------------------------------------- Lernfelder by date (training from 01.08.2026)
+    // 1st year 320 h: LF1 40 h = Aug–mid Sep, LF2 80 h, LF3 80 h, LF4 40 h, LF5 80 h = last quarter; ±1 month overlap at changes
+    [Theory]
+    [InlineData("2026-08-03", "LF1")]
+    [InlineData("2026-09-28", "LF1 LF2")]        // change from LF1 to LF2
+    [InlineData("2026-11-02", "LF2")]
+    [InlineData("2027-02-01", "LF3")]
+    [InlineData("2027-03-15", "LF3 LF4")]
+    [InlineData("2027-04-19", "LF4 LF5")]
+    [InlineData("2027-07-26", "LF5")]
+    [InlineData("2027-08-02", "LF6")]            // 2nd year starts with LF6
+    [InlineData("2028-01-17", "LF7 LF8")]
+    [InlineData("2028-08-07", "LF10b")]          // 3rd year: Fachrichtung Systemintegration
+    [InlineData("2029-06-04", "LF12b")]
+    [InlineData("2030-01-07", "LF10b LF11b LF12b")] // extended 4th year: all of the 3rd
+    public void LernfelderFollowEachOtherThroughTheYear(string date, string expected)
+    {
+        using var t = new TestHost();
+        using var s = t.Host.Open();
+        var subjects = s.Catalog.ListDepartments(onlyActive: true, kind: "school");
+        var picked = Curriculum.ForDate(subjects, new DateOnly(2026, 8, 1), DateOnly.Parse(date), Curriculum.SpecializationOf("Fachinformatiker für Systemintegration"));
+        Assert.Equal(expected, string.Join(' ', picked.Select(d => d.Code)));
+    }
+
+    [Fact]
+    public void ByDateIsTheDefaultForNewReportsAndWeekInfo()
+    {
+        using var t = new TestHost();
+        using var s = t.Host.Open();
+        s.Settings.Update(new AppSettings { TraineeName = "Max", TrainingStartDate = new DateOnly(2026, 8, 1), Profession = "Fachinformatiker für Systemintegration" });
+        Assert.True(s.Settings.Get().SchoolSubjectsByDate);
+        var byCode = s.Catalog.ListDepartments(kind: "school").ToDictionary(d => d.Code, d => d.Id);
+
+        Assert.Equal(new[] { byCode["LF1"], byCode["LF2"] }, s.Reports.WeekInfo(new DateOnly(2026, 9, 30)).SchoolDepartmentIds.ToArray());
+        var r = SchoolWeek(s, new DateOnly(2027, 2, 1));
+        Assert.Equal(new HashSet<string> { "LF3" }, Codes(r));
+        Assert.All(r.Days, d => Assert.Equal(new[] { byCode["LF3"] }, d.SubjectIds.ToArray()));
+    }
+
+    [Fact]
+    public void SettingsWithoutTheNewFieldSelectByDate()
+    {
+        using var t = new TestHost();
+        using var s = t.Host.Open();
+        s.Settings.SetFlag("app_settings", System.Text.Json.JsonDocument.Parse("""{"trainee_name":"Max","school_topics":true}""").RootElement);
+        Assert.True(s.Settings.Get().SchoolSubjectsByDate);
     }
 
     [Theory]

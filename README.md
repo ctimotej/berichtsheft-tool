@@ -25,7 +25,9 @@ from the plan) → edit the lines → *Unterschreiben* → *In Word öffnen* / *
   Anwendungsentwicklung (a), Systemintegration (b), Daten- und Prozessanalyse (c) and Digitale Vernetzung (d)), each with
   lesson topics. School days are filled with topics like „LF3: Subnetting: Netz- und Hostanteil berechnen“, chosen by
   **Ausbildungsjahr**: 1st year LF1–LF5, 2nd year LF6–LF9, 3rd year LF10–LF12 of your Fachrichtung (*Beruf / Fachrichtung*
-  in the settings). Any Lernfeld can be selected instead – in *Neuer Bericht* (list „Lernfelder“) or per day in the editor
+  in the settings). Within the year the **date** decides: the Lernfelder follow each other in order, each for a share of the
+  year matching its hours (e.g. 1st year from August: LF1 until mid-September, then LF2, …; around a change both are used).
+  This can be switched off in the settings (then all Lernfelder of the year). Any Lernfeld can be selected instead – in *Neuer Bericht* (list „Lernfelder“) or per day in the editor
   (*Lernfelder…*). The Abteilung **„Berufsschule“** turns a whole week into school days (choose it in *Neuer Bericht* or as
   „Einsatz“ in the plan); a Berufsschule block in the plan without Lernfelder uses those of the Ausbildungsjahr.
 - **Line wrapping:** entries longer than a form line continue on the next line (width per template,

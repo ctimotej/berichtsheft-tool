@@ -23,6 +23,9 @@ public sealed class AppSettings
     public string FederalState { get; set; } = "";
     public bool SchoolTopics { get; set; } = true;
     public int SchoolEntriesPerDay { get; set; } = 3;
+    /// <summary>School days: only the Lernfelder taught at that point of the Ausbildungsjahr (in order, by their hours);
+    /// off = all Lernfelder of the Ausbildungsjahr. See Services/Curriculum.cs.</summary>
+    public bool SchoolSubjectsByDate { get; set; } = true;
     public DateOnly? TrainingEndDate { get; set; }
     public int OverdueDays { get; set; } = 14;
     /// <summary>Tray icon + global hotkey Ctrl+Shift+B; closing the window then only hides it.</summary>

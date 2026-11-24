@@ -101,7 +101,10 @@ is a Lernfeld; LF1–5 belong to the 1st, LF6–9 to the 2nd and LF10–12 to th
 (a Anwendungsentwicklung, b Systemintegration, c Daten- und Prozessanalyse, d Digitale Vernetzung), taken from the profession in
 the settings. The subjects of a school day are chosen in this order: the day's own subjects (editor) > the subjects of the
 request (*Neuer Bericht*) > the Lernfelder of the school block in the plan > the Lernfelder of the Ausbildungsjahr > all active
-subjects (with a hint, e.g. without training start). The Lernfelder are seeded from `seed/lernfelder/*.json` once per database.
+subjects (with a hint, e.g. without training start). With *Lernfelder nach Datum wählen* (default, `school_subjects_by_date`)
+`Curriculum.ForDate` narrows the year's Lernfelder to those taught at the date: in number order, each for a share of the
+Ausbildungsjahr proportional to its hours from the description („80 Std.“, default 80), plus the neighbour within one month of
+a change. The Lernfelder are seeded from `seed/lernfelder/*.json` once per database.
 
 **Abteilung „Berufsschule“** (`Unit.is_school`): in a report or in a rotation period of the plan it makes every day without
 an explicit type a school day; a week that consists only of school days gets „Berufsschule“ as its Abteilung.

@@ -155,8 +155,8 @@ internal sealed class NewReportForm : Form
         var school = _types.Count(c => Ui.DayTypeKeys[Math.Max(0, c.SelectedIndex)] == "school");
         _lernfelder.Enabled = school > 0;
         _schoolHint.Text = school == 0 ? "Keine Schultage in dieser Woche."
-            : $"{school} Schultag(e): Themen aus den gewählten Lernfeldern. Vorausgewählt sind die Lernfelder des Ausbildungsjahres " +
-              "(3. Jahr: die der Fachrichtung aus den Einstellungen) bzw. die der Berufsschul-Planung.";
+            : $"{school} Schultag(e): Themen aus den gewählten Lernfeldern. Vorausgewählt sind die Lernfelder, die zu diesem Zeitpunkt " +
+              "des Ausbildungsjahres dran sind (3. Jahr: die der Fachrichtung) bzw. die der Berufsschul-Planung.";
     }
 
     private void CheckTopics(IEnumerable<int> ids)
