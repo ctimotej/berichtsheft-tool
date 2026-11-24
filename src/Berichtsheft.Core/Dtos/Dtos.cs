@@ -9,6 +9,7 @@ public static class Kinds
 {
     public static readonly string[] DayTypes = { "work", "school", "vacation", "holiday", "sick", "free" };
     public static readonly string[] CountModes = { "per_week", "per_day" };
+    public static readonly string[] SaveFormats = { "pdf", "docx" };
     public static readonly string[] DepartmentKinds = { "topic", "school" };
     public static readonly string[] PlanKinds = { "rotation", "school", "vacation" };
 

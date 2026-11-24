@@ -24,7 +24,7 @@ internal sealed class EditorForm : Form
     private readonly Label _subjectsInfo = new() { AutoSize = true, ForeColor = SystemColors.GrayText, Margin = new Padding(6, 6, 0, 0) };
     private readonly DataGridView _grid = Ui.Grid();
     private readonly TextBox _remarks = new() { Multiline = true, Height = 44, Dock = DockStyle.Fill, ScrollBars = ScrollBars.Vertical };
-    private readonly Label _hoursHint = new() { AutoSize = true, ForeColor = Color.Firebrick };
+    private readonly Label _hoursHint = new() { AutoSize = true, ForeColor = Theme.Error };
     private AppSettings _cfg = new();
     private readonly Label _total = new() { AutoSize = true, Anchor = AnchorStyles.Left | AnchorStyles.Bottom };
     private List<ReportDay> _days = new();

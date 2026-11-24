@@ -320,6 +320,28 @@ public class HostTests
     }
 
     [Fact]
+    public void SaveFormat_defaultsToPdf_andIsStored()
+    {
+        using var t = new TestHost();
+        using var s = t.Host.Open();
+        Assert.Equal("pdf", s.Settings.Get().SaveFormat);
+        // settings saved by an older version have no save_format: still PDF
+        s.Settings.SetFlag("app_settings", System.Text.Json.JsonDocument.Parse("""{"trainee_name":"Max"}""").RootElement);
+        Assert.Equal("pdf", s.Settings.Get().SaveFormat);
+        var cfg = s.Settings.Get();
+        cfg.SaveFormat = "docx";
+        cfg.Validate();
+        s.Settings.Update(cfg);
+        Assert.Equal("docx", s.Settings.Get().SaveFormat);
+    }
+
+    [Fact]
+    public void SaveFormat_rejectsUnknownFormats()
+    {
+        Assert.Throws<Berichtsheft.Core.InvalidInputError>(() => new AppSettings { SaveFormat = "odt" }.Validate());
+    }
+
+    [Fact]
     public void Coverage_countsSignedWeeksAsDone()
     {
         using var t = new TestHost();

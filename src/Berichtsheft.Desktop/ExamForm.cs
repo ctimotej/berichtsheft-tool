@@ -32,6 +32,7 @@ internal sealed class ExamForm : Form
         _from.ValueChanged += (_, _) => Preview();
         _to.ValueChanged += (_, _) => Preview();
         _pdf.CheckedChanged += (_, _) => Preview();
+        Ui.Try(() => { using var s = _host.Open(); if (s.Settings.Get().SaveFormat == "docx") _zip.Checked = true; });
         Preview();
     }
 

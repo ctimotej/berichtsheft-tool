@@ -147,6 +147,7 @@ internal static class Ui
     {
         f.Text = title;
         if (AppIcon != null) f.Icon = AppIcon;
+        Theme.Attach(f);
         f.ClientSize = new Size(w, h);
         f.StartPosition = FormStartPosition.CenterParent;
         f.ShowInTaskbar = false;

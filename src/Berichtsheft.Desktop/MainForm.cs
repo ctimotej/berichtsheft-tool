@@ -32,6 +32,7 @@ internal sealed class MainForm : Form
         ClientSize = new Size(820, 480);
         MinimumSize = new Size(640, 360);
         StartPosition = FormStartPosition.CenterScreen;
+        Theme.Attach(this);
 
         _statusBar.Items.Add(_status);
         ApplyMode();
@@ -465,8 +466,8 @@ internal static class ReportFiles
         return s.Reports.Download(id);
     }
 
-    /// <summary>Save one report as PDF (default) or Word, several as a ZIP of PDFs or Word documents.
-    /// The format is picked in the save dialog.</summary>
+    /// <summary>Save one report as PDF or Word, several as a ZIP of PDFs or Word documents. The dialog preselects
+    /// the format from the settings ("Speichern als", default PDF); it can be switched there per file.</summary>
     public static void SaveAs(IWin32Window owner, AppHost host, IReadOnlyList<int> ids)
     {
         Ui.Try(() =>
@@ -480,18 +481,25 @@ internal static class ReportFiles
                 suggested = Path.GetFileNameWithoutExtension(string.IsNullOrEmpty(r.DocumentKey) ? $"Berichtsheft_{r.Year}_KW{r.CalendarWeek}" : r.DocumentKey.Split('/').Last());
             }
             else suggested = "Berichtshefte";
+            var docxDefault = s.Settings.Get().SaveFormat == "docx";
             using var dlg = new SaveFileDialog
             {
                 FileName = suggested,
                 OverwritePrompt = true,
                 AddExtension = true,
-                FilterIndex = 1, // PDF is the default
+                FilterIndex = docxDefault ? 2 : 1,
+                DefaultExt = docxDefault && single ? "docx" : single ? "pdf" : "zip",
                 Filter = single ? "PDF-Dokument (*.pdf)|*.pdf|Word-Dokument (*.docx)|*.docx"
                                 : "ZIP mit PDF-Dokumenten (*.zip)|*.zip|ZIP mit Word-Dokumenten (*.zip)|*.zip",
             };
             if (dlg.ShowDialog(owner) != DialogResult.OK) return;
             var pdf = dlg.FilterIndex == 1;
-            if (single && Path.GetExtension(dlg.FileName).Equals(".docx", StringComparison.OrdinalIgnoreCase)) pdf = false; // typed extension wins
+            if (single) // a typed extension wins over the chosen filter
+            {
+                var ext = Path.GetExtension(dlg.FileName);
+                if (ext.Equals(".docx", StringComparison.OrdinalIgnoreCase)) pdf = false;
+                else if (ext.Equals(".pdf", StringComparison.OrdinalIgnoreCase)) pdf = true;
+            }
             byte[] data;
             var old = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;

@@ -46,11 +46,15 @@ from the plan) → edit the lines → *Unterschreiben* → *In Word öffnen* / *
 - Optional PDF preview when LibreOffice is installed
 - Pluggable providers: storage (local → SharePoint), generation (local → AI), signature (image → e-signature)
 - Logging, input validation, upgrade of existing databases on start
+- **Dark mode:** follows Windows (*Einstellungen > Personalisierung > Farben > Standard-App-Modus*), also when it is
+  switched while the program runs. High contrast keeps the system colors. Date fields and message boxes are drawn by
+  Windows and stay light.
 - **Systray:** with the setting *Im Infobereich (Systray) laufen* (Einstellungen) the program keeps running in the
   notification area; closing the window only hides it, **Strg+Umschalt+B** brings it back from anywhere.
   Switch it off in the settings for a normal window. *Beenden* (Datei menu or tray menu) quits for real.
-- **PDF or Word:** *Speichern unter* offers PDF (default) or Word for one report, or a ZIP of PDFs/Word files for
-  several. PDF needs Microsoft Word or LibreOffice on the PC (LibreOffice is free: libreoffice.org); without either, the program offers to save the Word document instead.
+- **PDF or Word:** *Speichern unter* offers PDF or Word for one report, or a ZIP of PDFs/Word files for
+  several. Which one is preselected is set in the settings (*Speichern als*, default PDF); it also preselects the
+  Prüfungsexport format. The save dialog can still switch per file. PDF needs Microsoft Word or LibreOffice on the PC (LibreOffice is free: libreoffice.org); without either, the program offers to save the Word document instead.
 - **One instance, autostart, reminders:** starting the program a second time just brings the running window
   forward. Settings: start with Windows (hidden in the tray) and a tray reminder (at most once a day) when a week
   has no report – on Fridays for the current week, and for earlier missing weeks.

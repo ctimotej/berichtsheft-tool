@@ -29,10 +29,12 @@ internal sealed class TrainerPanel : UserControl
 
         _drop.Paint += (_, e) =>
         {
-            using var pen = new Pen(_dragOver ? SystemColors.Highlight : SystemColors.ControlDark, 2f) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dash };
+            using var pen = new Pen(_dragOver ? Theme.Current.DropBorderHover : Theme.Current.DropBorder, 2f) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dash };
             e.Graphics.DrawRectangle(pen, 6, 6, _drop.Width - 13, _drop.Height - 13);
         };
-        _drop.BackColor = SystemColors.ControlLightLight;
+        _drop.BackColor = Theme.Current.DropBack;
+        Theme.Changed += ThemeChanged;
+        Disposed += (_, _) => Theme.Changed -= ThemeChanged;
 
         _grid.Columns.Add(Ui.Col("Datei", 34)); _grid.Columns.Add(Ui.Col("Ergebnis", 36)); _grid.Columns.Add(Ui.Col("Gespeichert in", 30));
         _grid.CellDoubleClick += (_, e) => { if (e.RowIndex >= 0 && _grid.Rows[e.RowIndex].Tag is string file) Ui.Try(() => Ui.OpenFile(file)); };
@@ -73,7 +75,7 @@ internal sealed class TrainerPanel : UserControl
         foreach (Control child in c.Controls) AllowDropOn(child);
     }
 
-    private void SetDragOver(bool on) { if (_dragOver != on) { _dragOver = on; _drop.BackColor = on ? Color.AliceBlue : SystemColors.ControlLightLight; _drop.Invalidate(); } }
+    private void SetDragOver(bool on) { if (_dragOver != on) { _dragOver = on; _drop.BackColor = on ? Theme.Current.DropHover : Theme.Current.DropBack; _drop.Invalidate(); } }
 
     private void OnDragEnter(object? sender, DragEventArgs e)
     {
@@ -88,6 +90,12 @@ internal sealed class TrainerPanel : UserControl
         if (e.Data?.GetData(DataFormats.FileDrop) is string[] paths) Sign(paths);
     }
 
+    private void ThemeChanged()
+    {
+        _drop.BackColor = _dragOver ? Theme.Current.DropHover : Theme.Current.DropBack;
+        _drop.Invalidate();
+    }
+
     private void RefreshSignatureState()
     {
         bool has = false;
@@ -95,7 +103,7 @@ internal sealed class TrainerPanel : UserControl
         Ui.Try(() => { using var s = _host.Open(); has = s.Settings.GetTrainerSignature() != null; problem = s.Settings.LastSignatureProblem; });
         _sigState.Text = problem != null ? (problem.Deleted ? "Unterschrift: nicht lesbar und gelöscht – bitte neu festlegen" : $"Unterschrift: nicht lesbar (Versuch {problem.Attempts} von {problem.MaxAttempts}) – bitte neu festlegen")
             : has ? "Unterschrift: gespeichert" : "Unterschrift: noch nicht festgelegt";
-        _sigState.ForeColor = has ? SystemColors.ControlText : Color.Firebrick;
+        _sigState.ForeColor = has ? Theme.Text : Theme.Error;
     }
 
     /// <summary>Draw or load the Ausbilder's signature; it is saved once and used for every file.</summary>
@@ -144,7 +152,7 @@ internal sealed class TrainerPanel : UserControl
         {
             var i = _grid.Rows.Add(Path.GetFileName(r.Source), (r.Ok ? "✔ " : "✘ ") + r.Message, r.Output != null ? Path.GetDirectoryName(r.Output) : "");
             _grid.Rows[i].Tag = r.Output;
-            _grid.Rows[i].DefaultCellStyle.ForeColor = r.Ok ? SystemColors.ControlText : Color.Firebrick;
+            _grid.Rows[i].DefaultCellStyle.ForeColor = r.Ok ? Theme.Text : Theme.Error;
             if (r.Ok) _lastFolder = Path.GetDirectoryName(r.Output);
         }
         if (_grid.Rows.Count > 0) _grid.FirstDisplayedScrollingRowIndex = _grid.Rows.Count - 1;

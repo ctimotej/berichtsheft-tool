@@ -20,6 +20,7 @@ internal sealed class SettingsForm : Form
     private readonly NumericUpDown _hours = Num(0, 24, 1), _schoolHours = Num(0, 24, 1), _count = Num(1, 100, 0), _countMax = Num(1, 100, 0), _recent = Num(0, 20, 0),
         _schoolEntries = Num(1, 10, 0), _overdue = Num(0, 365, 0);
     private readonly ComboBox _mode = new() { DropDownStyle = ComboBoxStyle.DropDownList };
+    private readonly ComboBox _saveFormat = new() { DropDownStyle = ComboBoxStyle.DropDownList };
     private readonly CheckBox _fill = new() { Text = "Stunden automatisch auf die Einträge verteilen", AutoSize = true };
     private readonly CheckBox _school = new() { Text = "Berufsschultage mit Unterrichtsthemen füllen", AutoSize = true };
     private readonly CheckBox _schoolByDate = new() { Text = "Lernfelder nach Datum wählen (der Reihe nach über das Ausbildungsjahr)", AutoSize = true };
@@ -41,9 +42,10 @@ internal sealed class SettingsForm : Form
     public SettingsForm(AppHost host, bool trainerMode = false)
     {
         _host = host;
-        Ui.Dialog(this, "Einstellungen", 560, trainerMode ? 230 : 830);
+        Ui.Dialog(this, "Einstellungen", 560, trainerMode ? 230 : 860);
         _state.Items.AddRange(States.Select(s => (object)(s.Length == 0 ? "(keins – keine Feiertage)" : s)).ToArray());
         _mode.Items.AddRange(new object[] { "pro Woche", "pro Tag" });
+        _saveFormat.Items.AddRange(new object[] { "PDF (.pdf)", "Word (.docx)" });
 
         var countRow = new FlowLayoutPanel { AutoSize = true };
         countRow.Controls.AddRange(new Control[] { _count, new Label { Text = "bis", AutoSize = true, Margin = new Padding(3, 6, 3, 0) }, _countMax, _mode });
@@ -61,7 +63,7 @@ internal sealed class SettingsForm : Form
             ("Stunden pro Arbeitstag:", _hours), ("Stunden pro Schultag:", _schoolHours),
             ("Einträge (von – bis pro Tag):", countRow), ("Themen der letzten Berichte meiden:", _recent),
             ("", _fill), ("", _school), ("", _schoolByDate), ("", _tray), ("", _autostart), ("", _reminder), ("", _trainerMode), ("Einträge pro Schultag:", _schoolEntries),
-            ("Als überfällig zeigen nach (Tagen):", _overdue), ("Standard-Unterschrift:", sigRow));
+            ("Als überfällig zeigen nach (Tagen):", _overdue), ("Speichern als:", _saveFormat), ("Standard-Unterschrift:", sigRow));
         form.Dock = DockStyle.Fill;
         Controls.Add(form);
         Controls.Add(Ui.ButtonBar(DockStyle.Bottom, Ui.OkButton(this, (_, _) => Save()), Ui.CancelButton(this)));
@@ -84,6 +86,7 @@ internal sealed class SettingsForm : Form
         SetNum(_count, _cfg.DefaultCount); SetNum(_countMax, Math.Max(_cfg.DefaultCount, _cfg.DefaultCountMax)); _mode.SelectedIndex = _cfg.DefaultCountMode == "per_day" ? 1 : 0;
         SetNum(_recent, _cfg.AvoidRecentReports); _fill.Checked = _cfg.FillHours; _school.Checked = _cfg.SchoolTopics; _schoolByDate.Checked = _cfg.SchoolSubjectsByDate;
         SetNum(_schoolEntries, _cfg.SchoolEntriesPerDay); SetNum(_overdue, _cfg.OverdueDays);
+        _saveFormat.SelectedIndex = _cfg.SaveFormat == "docx" ? 1 : 0;
         _tray.Checked = _cfg.TrayEnabled; _autostart.Checked = _cfg.AutostartEnabled; _reminder.Checked = _cfg.ReminderEnabled; _trainerMode.Checked = _cfg.TrainerModeEnabled;
         _tray.CheckedChanged += (_, _) => TrayChanged();
         TrayChanged();
@@ -133,6 +136,7 @@ internal sealed class SettingsForm : Form
         _cfg.DefaultCount = (int)_count.Value; _cfg.DefaultCountMax = _countMax.Value > _count.Value ? (int)_countMax.Value : 0; _cfg.DefaultCountMode = _mode.SelectedIndex == 1 ? "per_day" : "per_week";
         _cfg.AvoidRecentReports = (int)_recent.Value; _cfg.FillHours = _fill.Checked; _cfg.SchoolTopics = _school.Checked; _cfg.SchoolSubjectsByDate = _schoolByDate.Checked;
         _cfg.SchoolEntriesPerDay = (int)_schoolEntries.Value; _cfg.OverdueDays = (int)_overdue.Value;
+        _cfg.SaveFormat = _saveFormat.SelectedIndex == 1 ? "docx" : "pdf";
         _cfg.TrayEnabled = _tray.Checked;
         _cfg.AutostartEnabled = _autostart.Checked && _tray.Checked; // autostart hides the window, so it needs the tray
         _cfg.ReminderEnabled = _reminder.Checked && _tray.Checked;

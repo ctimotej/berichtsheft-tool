@@ -48,7 +48,7 @@ internal sealed class CoverageForm : Form
         {
             var i = _grid.Rows.Add(w.Year, w.CalendarWeek, $"{Ui.Date(w.StartDate)} – {Ui.Date(w.EndDate)}", w.ReportNumber, Ui.StatusName(w.Status) + (w.Overdue ? " – überfällig" : ""));
             _grid.Rows[i].Tag = w;
-            if (w.Status == "missing" || w.Overdue) _grid.Rows[i].DefaultCellStyle.ForeColor = Color.Firebrick;
+            if (w.Status == "missing" || w.Overdue) _grid.Rows[i].DefaultCellStyle.ForeColor = Theme.Error;
         }
     }
 

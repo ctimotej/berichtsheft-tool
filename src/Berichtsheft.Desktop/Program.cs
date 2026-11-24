@@ -17,6 +17,7 @@ internal static class Program
     private static int Main(string[] args)
     {
         ApplicationConfiguration.Initialize();
+        Theme.Initialize(); // light or dark, as set in Windows
 
         if (args.Length > 0 && args[0] == "--prepare-template")
         {

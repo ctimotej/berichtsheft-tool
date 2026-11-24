@@ -35,6 +35,9 @@ public sealed class AppSettings
     /// <summary>Offers the Ausbilder mode (menu "Ansicht"). The program always starts in the normal mode; the
     /// Ausbilder mode must be enabled here and is switched on per session.</summary>
     public bool TrainerModeEnabled { get; set; }
+    /// <summary>Format preselected when saving reports ("Speichern unter", ZIP of several reports, Prüfungsexport):
+    /// "pdf" (default) | "docx". The save dialog can still switch it per file.</summary>
+    public string SaveFormat { get; set; } = "pdf";
     /// <summary>Ausbilder mode: also save Word files as PDF.</summary>
     public bool TrainerAlsoPdf { get; set; }
     /// <summary>Tray notification for missing reports (needs the tray).</summary>
@@ -56,5 +59,6 @@ public sealed class AppSettings
         Dtos.Check.Str("federal_state", FederalState, 0, 5);
         Dtos.Check.Num("school_entries_per_day", SchoolEntriesPerDay, 1, 10);
         Dtos.Check.Num("overdue_days", OverdueDays, 0, 365);
+        Dtos.Check.OneOf("save_format", SaveFormat, Dtos.Kinds.SaveFormats);
     }
 }
